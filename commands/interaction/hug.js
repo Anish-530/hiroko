@@ -14,7 +14,7 @@ module.exports={
     aliases: [],
     usage: 'hey hug <mention someone>',
     run: async(bot, message, args)=>{
-        const memberrt = message.mentions.users.first()
+        const memberrt = message.mentions.users.first() || message.author;
         if (memberrt.id === message.guild.me.id) { return message.channel.send(`*Hugs ${message.author} back!! 💖*`) }
         const huggg = await message.channel.send("\`Hugging....\`")
         if (!memberrt || memberrt === message.author) {
