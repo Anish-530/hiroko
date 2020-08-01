@@ -1,0 +1,12 @@
+[
+    {
+        "question": "Where do you want to hide?",
+        "answers": [
+            "hall",
+            "under bed",
+            "cupboard",
+            "attic",
+            "store room"
+        ]
+    }
+]

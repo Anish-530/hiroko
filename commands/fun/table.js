@@ -1,0 +1,58 @@
+const Discord = require('discord.js');
+const {MessageEmbed} = require('discord.js');
+module.exports={
+    name: 'table',
+    category: 'fun',
+    description: 'shows a small animation',
+    aliases: ['angrytable', 'angry', 'angy', 'arghh'],
+    usage: 'hey table',
+    run: async(bot, message, args)=>{
+        const pk = await message.channel.send("**Ready?**")
+        const ch = [ pk.edit("Here we go"),
+        pk.edit("meet kameratsu"),
+        pk.edit("meet kameratsu"),
+        pk.edit("a boy who gets angry easily"),
+        pk.edit("a boy who gets angry easily"),
+        pk.edit("This is kameratsu"),
+        pk.edit("This is kameratsu"),
+        pk.edit("let\'s have a glance at him"),
+        pk.edit("let\'s have a glance at him"),
+        pk.edit("ಠ_ಠ"), 
+        pk.edit("ಠ︵ಠ"), 
+        pk.edit("ಠ益ಠ"),
+        pk.edit("ಠ 益 ಠ"), 
+        pk.edit(`(ノಠ益ಠ)ノ`),
+        pk.edit(`(ノಠ益ಠ)ノ彡┻━┻`),
+        pk.edit("(ノಠ益ಠ)ノ彡\t┻━┻"),
+        pk.edit("(ノಠ益ಠ)ノ彡\t\t┻━┻"),
+        pk.edit("(ノಠ益ಠ)ノ彡\t\t\t┻━┻"),
+        pk.edit("(ノಠ益ಠ)ノ彡\t\t\t\t┻━┻"),
+        pk.edit("(ノಠ益ಠ)ノ彡\t\t\t\t\t\t┻━┻"),
+        pk.edit("ಠ_ಠ"),
+        pk.edit("┻━┻ミ            ＼(≧ﾛ≦＼)"),
+        pk.edit("┻━┻ミ         ＼(≧ﾛ≦＼)"),
+        pk.edit("ಠ_ಠ"),
+        pk.edit("ಠ﹏ಠ"),
+        pk.edit("ಠ_ಠ"),
+        pk.edit("ಠ﹏ಠ"),
+        pk.edit("ಠ_ಠ"),
+        pk.edit("ಠ﹏ಠ"),
+        pk.edit("ಠ_ಠ"),
+        pk.edit("ಠ﹏ಠ"),
+        pk.edit("ಠ_ಠ"),
+        pk.edit("¯_ʘ‿ʘ_/¯"),
+        pk.edit("¯_ʘ‿ʘ_ /¯"),
+        pk.edit("¯_ʘ‿ʘ_/¯"),
+        pk.edit("¯_ʘ‿ʘ_ /¯"),
+        pk.edit("┬─┬ノ(ಠ_ಠノ)"),
+        pk.edit("┬─┬ノ(ಠ_ಠノ)"),
+        pk.edit("<(￣︶￣)>"),
+        pk.edit("<(￣ ︶ ￣)>"),
+        pk.edit("<(￣︶￣)>"),
+        pk.edit("<(￣ ︶ ￣)>"),
+        pk.edit("<(￣︶￣)>"),
+        pk.edit("Be like kameratsu")
+        ]
+
+    }
+}
