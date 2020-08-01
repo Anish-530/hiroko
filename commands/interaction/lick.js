@@ -16,7 +16,7 @@ module.exports={
     run: async(bot, message, args)=>{
         const mentionedddMember111 = message.mentions.users.first()
         if (mentionedddMember111.id === message.guild.me.id) { return message.channel.send(`*>w<*`) }
-        if (!args[0]) { return message.channel.send("*You can lick me UwU*"); }
+        else if (!args[0]) { return message.channel.send("*You can lick me UwU*") }
         else if (mentionedddMember111.id === message.author) { return message.channel.send("Do you taste good?") }
         const slapp = await message.channel.send("**Licking...**")
         Tenor.Search.Random("anime lick", "1").then(Results111 => {
