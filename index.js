@@ -20,10 +20,8 @@ const Timeout = new Set();
 
 const request = require('request');
 const {MessageCollector} = require('discord.js-collector');
-const path = require('path');
 const ms = require('ms')
 
-const filter = m => m.content.includes('discord');
 
 
 
