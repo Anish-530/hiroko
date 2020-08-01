@@ -14,10 +14,10 @@ module.exports={
     aliases: [],
     usage: 'hey lick <member>',
     run: async(bot, message, args)=>{
-        if (!args[0]) { return message.channel.send("*You can lick me UwU*") }
-        const mentionedddMember111 = message.mentions.users.first()
+        if (!args[0]) return message.channel.send("*You can lick me UwU*")
+        const mentionedddMember111 = message.mentions.users.first() || message.author;
         if (mentionedddMember111.id === message.guild.me.id) { return message.channel.send(`*>w<*`) }
-        else if (mentionedddMember111.id === message.author) { return message.channel.send("Do you taste good?") }
+        else if (mentionedddMember111.id === message.author.id) { return message.channel.send("Do you taste good?") }
         const slapp = await message.channel.send("**Licking...**")
         Tenor.Search.Random("anime lick", "1").then(Results111 => {
             Results111.forEach(Post111 => {
