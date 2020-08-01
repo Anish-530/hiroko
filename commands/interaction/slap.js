@@ -14,10 +14,10 @@ module.exports={
     aliases: [],
     usage: 'hey slap <member>',
     run: async(bot, message, args)=>{
+        if (!args[0]) return message.channel.send("Don't slap anyone please 😢")
         const mentionedddMember111 = message.mentions.users.first()
         if (mentionedddMember111.id === message.guild.me.id) { return message.channel.send(`*Cries 😭* bully :(`) }
-        if (!args[0]) { return message.channel.send("Don't slap anyone please 😢"); }
-        else if (mentionedddMember111.id === message.author) { return message.channel.send("Don't slap yourself please 😢") }
+        else if (mentionedddMember111.id === message.author.id) { return message.channel.send("Don't slap yourself please 😢") }
         const slapp = await message.channel.send("**Slapping...**")
         Tenor.Search.Random("anime slap", "1").then(Results111 => {
             Results111.forEach(Post111 => {
