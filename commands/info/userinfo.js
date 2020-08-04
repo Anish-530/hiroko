@@ -36,61 +36,61 @@ module.exports={
             embed.setColor(member.displayHexColor || 0x2f3136)
             if(statuser === "offline") {
             embed.addField('User', [
-                `**▶️ Username:** ${member.user.username}`,
-                `**▶️ Tag:** #${member.user.discriminator}`,
-                `**▶️ ID:** ${member.id}`,
-                `**▶️ Flags:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
-                `**▶️ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
-                `**▶️ Account Creation Detail:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`,
-                `**▶️ Status:** ⚫ ${statuser}`,
-                `**▶️ Game:** ${member.user.presence.game || 'Not playing a game right now'}`,
+                `**❯ Username:** ${member.user.username}`,
+                `**❯ Tag:** #${member.user.discriminator}`,
+                `**❯ ID:** ${member.id}`,
+                `**❯ Flags:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
+                `**❯ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
+                `**❯ Account Creation Detail:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`,
+                `**❯ Status:** ⚫ ${statuser}`,
+                `**❯ Game:** ${member.user.presence.game || 'Not playing a game right now'}`,
                 `\u200b`
             ])
         }
         else if(statuser === "online") {
             embed.addField('User', [
-                `**▶️ Username:** ${member.user.username}`,
-                `**▶️ Tag:** #${member.user.discriminator}`,
-                `**▶️ ID:** ${member.id}`,
-                `**▶️ Flags:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
-                `**▶️ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
-                `**▶️ Account Creation Detail:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`,
-                `**▶️ Status:** 🟢 ${statuser}`,
-                `**▶️ Game:** ${member.user.presence.game || 'Not playing a game right now'}`,
+                `**❯ Username:** ${member.user.username}`,
+                `**❯ Tag:** #${member.user.discriminator}`,
+                `**❯ ID:** ${member.id}`,
+                `**❯ Flags:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
+                `**❯ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
+                `**❯ Account Creation Detail:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`,
+                `**❯ Status:** 🟢 ${statuser}`,
+                `**❯ Game:** ${member.user.presence.game || 'Not playing a game right now'}`,
                 `\u200b`
             ])
         }
         else if(statuser === "dnd") {
             embed.addField('User', [
-                `**▶️ Username:** ${member.user.username}`,
-                `**▶️ Tag:** #${member.user.discriminator}`,
-                `**▶️ ID:** ${member.id}`,
-                `**▶️ Flags:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
-                `**▶️ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
-                `**▶️ Account Creation Detail:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`,
-                `**▶️ Status:** 🔴 ${statuser}`,
-                `**▶️ Game:** ${member.user.presence.game || 'Not playing a game right now'}`,
+                `**❯ Username:** ${member.user.username}`,
+                `**❯ Tag:** #${member.user.discriminator}`,
+                `**❯ ID:** ${member.id}`,
+                `**❯ Flags:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
+                `**❯ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
+                `**❯ Account Creation Detail:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`,
+                `**❯ Status:** 🔴 ${statuser}`,
+                `**❯ Game:** ${member.user.presence.game || 'Not playing a game right now'}`,
                 `\u200b`
             ])
         }
         else if(statuser === "idle") {
             embed.addField('User', [
-                `**▶️ Username:** ${member.user.username}`,
-                `**▶️ Tag:** #${member.user.discriminator}`,
-                `**▶️ ID:** ${member.id}`,
-                `**▶️ Flags:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
-                `**▶️ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
-                `**▶️ Account Creation Detail:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`,
-                `**▶️ Status:** 🟡 ${statuser}`,
-                `**▶️ Game:** ${member.user.presence.game || 'Not playing a game right now'}`,
+                `**❯ Username:** ${member.user.username}`,
+                `**❯ Tag:** #${member.user.discriminator}`,
+                `**❯ ID:** ${member.id}`,
+                `**❯ Flags:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
+                `**❯ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
+                `**❯ Account Creation Detail:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`,
+                `**❯ Status:** 🟡 ${statuser}`,
+                `**❯ Game:** ${member.user.presence.game || 'Not playing a game right now'}`,
                 `\u200b`
             ])
         }
             embed.addField('Member', [
-                `**▶️ Highest Role:** ${member.roles.highest.id === message.guild.id ? 'None' : member.roles.highest.name}`,
-                `**▶️ Server Join Date:** ${moment(member.joinedAt).format('LL LTS')}`,
-                `**▶️ Hoist Role:** ${member.roles.hoist ? member.roles.hoist.name : 'None'}`,
-                `**▶️ Roles [${roles.length}]:** ${roles.length < 10 ? roles.join(', ') : roles.length > 10 ? this.client.utils.trimArray(roles) : 'None'}`,
+                `**❯ Highest Role:** ${member.roles.highest.id === message.guild.id ? 'None' : member.roles.highest.name}`,
+                `**❯ Server Join Date:** ${moment(member.joinedAt).format('LL LTS')}`,
+                `**❯ Hoist Role:** ${member.roles.hoist ? member.roles.hoist.name : 'None'}`,
+                `**❯ Roles [${roles.length}]:** ${roles.length < 10 ? roles.join(', ') : roles.length > 10 ? this.client.utils.trimArray(roles) : 'None'}`,
                 `\u200b`
             ]);
         return message.channel.send(embed);
