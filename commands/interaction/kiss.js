@@ -15,7 +15,15 @@ module.exports={
     usage: 'hey kiss <mention someone>',
     run: async(bot, message, args)=>{
         const mentionedddMember11 = message.mentions.users.first() || message.author;
-        if (mentionedddMember11.id === message.guild.me.id) { return message.channel.send(`*Kisses ${message.author} back UwU*`) }
+                //changed
+                if (message.mentions.members.first() !== undefined) {
+
+                    if (message.mentions.members.first().id === bot.user.id) {
+                  
+                     return message.channel.send(`*Kisses back ${message.author} UwU*`)
+                  
+                    }
+                }
         else if (mentionedddMember11 === message.author) { return message.channel.send("Never seen someone kissing themselves 👀") }
         const kisss = await message.channel.send("\`Kissing....\`")
         Tenor.Search.Random("anime kiss", "1").then(Results1 => {

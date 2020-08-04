@@ -14,10 +14,18 @@ module.exports={
     aliases: [],
     usage: 'hey hug <mention someone>',
     run: async(bot, message, args)=>{
-        const memberrt = message.mentions.users.first() || message.author;
-        if (memberrt.id === message.guild.me.id) { return message.channel.send(`*Hugs ${message.author} back!! 💖*`) }
+        //changed
+        const memberrt = message.mentions.users.first()
+        if (message.mentions.members.first() !== undefined) {
+
+            if (message.mentions.members.first().id === bot.user.id) {
+          
+             return message.channel.send(`*Hugs ${message.author} back!!* 💖`)
+          
+            }
+        }
         const huggg = await message.channel.send("\`Hugging....\`")
-        if (!args[0] || memberrt === message.author) {
+        if (!memberrt || memberrt === message.author) {
             let sad = ["https://media.giphy.com/media/FB5EOw0CaaQM0/giphy.gif", "https://s-media-cache-ak0.pinimg.com/originals/73/b1/3b/73b13bcd2590cd93ca1ca9bbc7f917be.gif"]
             let msad = sad[Math.floor(Math.random() * sad.length)]
             let sembed = new Discord.MessageEmbed()
@@ -41,7 +49,7 @@ module.exports={
                     eh.setFooter("Hiroko", bot.user.avatarURL())
                     return huggg.edit("\t", eh)
                 });
-            }).catch(err)
+            }).catch(console.error)
         }
     }
 }

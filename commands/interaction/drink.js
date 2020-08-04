@@ -8,27 +8,43 @@ const Tenor = require("tenorjs").client({
 });
 const {MessageEmbed} = require('discord.js');
 module.exports={
-    name: 'scream',
+    name: 'drink',
     category: 'interaction',
-    description: 'Scream alone or Scream at someone',
+    description: 'drink alone or drink with someone',
     aliases: [],
-    usage: 'hey scream [mention someone]',
+    usage: 'hey drink [mention someone]',
     run: async(bot, message, args)=>{
         const mentionedddMembere222 = message.mentions.users.first()
         if (message.mentions.members.first() !== undefined) {
-            if (message.mentions.members.first().id === bot.user.id) return message.channel.send("*cries 😭*") 
+            if (message.mentions.members.first().id === bot.user.id) return message.channel.send("*shares 🍻*") 
         }
-        if (mentionedddMembere222 === message.author) { return message.channel.send("baka >~<"); }
-        const screammm = await message.channel.send("\`Screaming....\`")
+        const screammm = await message.channel.send("\`Drinking....\`")
         let sc = new Discord.MessageEmbed()
+        if (mentionedddMembere222 === message.author) {
+            Tenor.Search.Random("anime beer drinking", "1").then(Resultsr => {
+                Resultsr.forEach(Postr => {
+                    var mediaxr = Postr.media[0];
+                    console.log(mediaxr.gif);
+                    var gifr = mediaxr.gif
+                    console.log(gifr)
+                    
+                    sc.setColor(0x2f3136)
+                    sc.setDescription(`**${message.author.username}** drinks 🍺`)
+                    sc.setImage(gifr.url)
+                    sc.setTimestamp(new Date())
+                    sc.setFooter("Hiroko", bot.user.avatarURL())
+                    return screammm.edit("\t", sc)
+                })
+            })
+        }
         if (mentionedddMembere222) {
-            Tenor.Search.Random("anime angry scream", "1").then(Resultsr => {
+            Tenor.Search.Random("anime beer drinking", "1").then(Resultsr => {
                 Resultsr.forEach(Postr => {
                     var mediaxr = Postr.media[0];
                     var gifr = mediaxr.gif
             
                     sc.setColor(0x2f3136)
-                    sc.setDescription(`**${message.author.username}** screams at **${mentionedddMembere222.username}** 😱`)
+                    sc.setDescription(`**${message.author.username}** drinks with **${mentionedddMembere222.username}** 🍻`)
                     sc.setImage(gifr.url)
                     sc.setTimestamp(new Date())
                     sc.setFooter("Hiroko", bot.user.avatarURL())
@@ -36,8 +52,8 @@ module.exports={
                 });
             })
         }
-        if (!mentionedddMembere222) {
-            Tenor.Search.Random("anime scream", "1").then(Resultsr => {
+        else if (!mentionedddMembere222) {
+            Tenor.Search.Random("anime beer drinking", "1").then(Resultsr => {
                 Resultsr.forEach(Postr => {
                     var mediaxr = Postr.media[0];
 
@@ -45,7 +61,7 @@ module.exports={
               
                 
                     sc.setColor(0x2f3136)
-                    sc.setDescription(`**${message.author.username}** screams 😱`)
+                    sc.setDescription(`**${message.author.username}** drinks 🍺`)
                     sc.setImage(gifr.url)
                     sc.setTimestamp(new Date())
                     sc.setFooter("Hiroko", bot.user.avatarURL())

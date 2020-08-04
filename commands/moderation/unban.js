@@ -10,17 +10,17 @@ module.exports={
         if(!message.member.hasPermission(["BAN_MEMBERS", "ADMINISTRATOR"])) return message.reply("Your roles are too low to use this commaned :(");
 
         if(!args[0]) return message.channel.send("You need to mention the user, you want to **unban**"); 
-        //This if() checks if we typed anything after "!unban"
+    
     
         let bannedMember;
-        //This try...catch solves the problem with the await
+        
         try{                                                            
             bannedMember = await bot.users.fetch(args[0])
         }catch(e){
             if(!bannedMember) return message.channel.send("That's not a valid ID")
         }
     
-        //Check if the user is not banned
+        
         try {
                 await message.guild.fetchBan(args[0])
             } catch(e){

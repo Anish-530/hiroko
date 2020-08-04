@@ -10,7 +10,7 @@ module.exports={
         const inv = new Discord.MessageEmbed()
         inv.setThumbnail(bot.user.avatarURL())
         inv.addField('Invite me', 
-        `**▶️ :** [My invite link](https://discordapp.com/oauth2/authorize?client_id=722729985512833076&scope=bot&permissions=1584917759)`)
+        `**<a:right:733770305599701003> :** [My invite link](https://discordapp.com/oauth2/authorize?client_id=722729985512833076&scope=bot&permissions=1584917759)`)
         return message.channel.send(inv);
     }
 }

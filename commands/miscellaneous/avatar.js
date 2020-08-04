@@ -12,7 +12,7 @@ module.exports={
         em.setImage(memberr.displayAvatarURL({ dynamic: true, format: 'png', size: 512 }))
         em.setColor(0x2f3136)
         em.addField(memberr.username + '\'s Avatar', [
-            `**▶️ ** [Link to ${memberr.username}'s avatar](${memberr.displayAvatarURL({ dynamic: true })})`
+            `**<a:right:733770305599701003> ** [Link to ${memberr.username}'s avatar](${memberr.displayAvatarURL({ dynamic: true })})`
         ])
         em.setFooter(`Oh! Btw Nice pfp! ngl 😏`)
         message.channel.send(em);

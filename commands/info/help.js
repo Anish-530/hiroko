@@ -101,7 +101,7 @@ module.exports={
                     fields: [
                         {
                             name: '😂 | FUN',
-                            value: `\`hey 8ball\`\n\`hey clap\`\n\`hey finduser\`\n\`hey hey\`\n\`hey hirostreaks\`\n\`hey isimp\`\n\`hey megay\`\n\`hey mesimp\`\n\`hey pog\`\n\`hey say\`\n\`hey sayd\`\n\`hey spam\`\n\`hey spoil\`\n\`hey table\`\n`
+                            value: `\`hey 8ball\`\n\`hey bold\`\n\`hey clap\`\n\`hey epic\`\n\`hey finduser\`\n\`hey flip\`\n\`hey hey\`\n\`hey isimp\`\n\`hey megay\`\n\`hey mesimp\`\n\`hey owofy\`\n\`hey pog\`\n\`hey sayd(say delete)\`\n\`hey say\`\n\`hey search\`\n\`hey spoil\`\n\`hey table\`\n\`hey uwufy\`\n`
                         }
                     ]
                 }
@@ -125,7 +125,7 @@ module.exports={
                     fields: [
                         {
                             name: '✨ | GUILD',
-                            value: `\`hey invite\`\n\`hey nick\``
+                            value: `\`hey emojis\`\n\`hey finduser\`\n\`hey invite\`\n\`hey nick\`\n`
                         }
                     ]
                 }
@@ -137,7 +137,7 @@ module.exports={
                     fields: [
                         {
                             name: '⛰ | IMAGE FUN',
-                            value: `\`hey delete\`\n\`hey fakenitro\`\n\`hey nani\`\n\`hey rip\`\n\`hey simp\``
+                            value: `\`hey bad\`\n\`hey butterfly\`\n\`hey cheat\`\n\`hey delete\`\n\`hey fakenitro\`\n\`hey nani\`\n\`hey rip\`\n\`hey simp\`\n`
                         }
                     ]
                 }
@@ -149,7 +149,7 @@ module.exports={
                     fields: [
                         {
                             name: '🤖 | INFO',
-                            value: `\`hey botinfo\`\n\`hey botinvite\`\n\`hey help\`\n\`hey ping\`\n\`hey supportserver\`\n\`hey time\`\n\`hey uptime\`\n\`hey userinfo\``
+                            value: `\`hey botinfo\`\n\`hey botinvite\`\n\`hey dmhelp\`\n\`hey help\`\n\`hey ping\`\n\`hey supportserver\`\n\`hey time\`\n\`hey uptime\`\n\`hey userinfo\`\n`
                         }
                     ]
                 }
@@ -161,7 +161,7 @@ module.exports={
                     fields: [
                         {
                             name: '🤝 | INTERACTION',
-                            value: `\`hey hug\`\n\`hey kiss\`\n\`hey scream\``
+                            value: `\`hey baka\`\n\`hey blush\`\n\`hey carry\`\n\`hey cry\`\n\`hey drink\`\n\`hey explode\`\n\`hey greet\`\n\`hey handhold\`\n\`hey highfive\`\n\`hey hug\`\n\`hey kill\`\n\`hey kiss\`\n\`hey laugh\`\n\`hey lick\`\n\`hey nom\`\n\`hey pat\`\n\`hey poke\`\n\`hey pout\`\n\`hey punch\`\n\`hey scream\`\n\`hey shoot\`\n\`hey slap\`\n\`hey sniff\`\n\`hey stare\`\n\`hey tickle\`\n\`hey wag\`\n`
                         }
                     ]
                 }
@@ -185,7 +185,19 @@ module.exports={
                     fields: [
                         {
                             name: '⚙ | MODERATION',
-                            value: `\`hey ban\`\n\`hey clear\`\n\`hey kick\`\n\`hey unban\``
+                            value: `\`hey ban\`\n\`hey clear\`\n\`hey createchannel\`\n\`hey deletechannel\`\n\`hey kick\`\n\`hey unban\`\n`
+                        }
+                    ]
+                }
+            },
+            {
+                embed: {
+                    color: 0x2f3136,
+                    title: 'Use the :arrow_backward: or :arrow_forward: reactions to navigate through the pages and 🗑 to delete the embed.\nUse \`hey help [command]\` to get more information about a specific command.',
+                    fields: [
+                        {
+                            name: 'This is the last page',
+                            value: `\`\`\`More commands are being added everyday\`\`\``
                         }
                     ]
                 }
@@ -231,7 +243,7 @@ module.exports={
     let info = `No information found for command **${input.toLowerCase()}**`;
 
     if (!cmd) {
-        return message.channel.send(embed.setColor("RED").setDescription(info).setFooter('This means that the command you entered was either not found\nor there was mistakes while writing the command, check you spelling')).then(message => message.delete({ timeout: 10000 }));
+        return message.channel.send(embed.setColor("RED").setDescription(info).setFooter('This means that the command you entered was either not found\nor there was mistakes while writing the command\'s name, you can recheck your spelling')).then(message => message.delete({ timeout: 10000 }));
     }
     if (cmd.category) info += `**Category**: ${cmd.category}`;
     if (cmd.name) info = `**Command name**: ${cmd.name}`;
@@ -240,7 +252,7 @@ module.exports={
     if (cmd.description) info += `\n**Description**: ${cmd.description}`;
     if (cmd.usage) {
         info += `\n**Usage**: ${cmd.usage}`;
-        embed.setFooter(`Syntax: <> = required, [] = optional, Note : If no aliases are provided, then that command has no aliases`);
+        embed.setFooter(`Syntax: <> = required, [] = optional, Note : If no aliases are provided, then that command has no aliases, i.e. no shortcut.`);
     }
 
     return message.channel.send(embed.setColor(0x2f3136).setDescription(info));

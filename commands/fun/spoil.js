@@ -11,6 +11,7 @@ module.exports={
     if(!aaa) return message.channel.send("Give me something to make it a spoiler")
     const bbb = aaa.split('|| ||').join('|| ||');
     const ccc = '||' + bbb + '||';
+    message.delete()
     message.channel.send(ccc);
     }
 }

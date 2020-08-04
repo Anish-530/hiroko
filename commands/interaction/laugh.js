@@ -8,27 +8,27 @@ const Tenor = require("tenorjs").client({
 });
 const {MessageEmbed} = require('discord.js');
 module.exports={
-    name: 'scream',
+    name: 'laugh',
     category: 'interaction',
-    description: 'Scream alone or Scream at someone',
+    description: 'laugh alone or laugh at someone',
     aliases: [],
-    usage: 'hey scream [mention someone]',
+    usage: 'hey laugh [mention someone]',
     run: async(bot, message, args)=>{
         const mentionedddMembere222 = message.mentions.users.first()
         if (message.mentions.members.first() !== undefined) {
-            if (message.mentions.members.first().id === bot.user.id) return message.channel.send("*cries 😭*") 
+            if (message.mentions.members.first().id === bot.user.id) return message.channel.send("*huh :/*") 
         }
-        if (mentionedddMembere222 === message.author) { return message.channel.send("baka >~<"); }
-        const screammm = await message.channel.send("\`Screaming....\`")
+        if (mentionedddMembere222 === message.author) return message.channel.send("wait what? >~<")
+        const screammm = await message.channel.send("\`Laughing....\`")
         let sc = new Discord.MessageEmbed()
         if (mentionedddMembere222) {
-            Tenor.Search.Random("anime angry scream", "1").then(Resultsr => {
+            Tenor.Search.Random("anime laughing", "1").then(Resultsr => {
                 Resultsr.forEach(Postr => {
                     var mediaxr = Postr.media[0];
                     var gifr = mediaxr.gif
             
                     sc.setColor(0x2f3136)
-                    sc.setDescription(`**${message.author.username}** screams at **${mentionedddMembere222.username}** 😱`)
+                    sc.setDescription(`**${message.author.username}** laughs at **${mentionedddMembere222.username}** 😂`)
                     sc.setImage(gifr.url)
                     sc.setTimestamp(new Date())
                     sc.setFooter("Hiroko", bot.user.avatarURL())
@@ -37,7 +37,7 @@ module.exports={
             })
         }
         if (!mentionedddMembere222) {
-            Tenor.Search.Random("anime scream", "1").then(Resultsr => {
+            Tenor.Search.Random("anime laughing", "1").then(Resultsr => {
                 Resultsr.forEach(Postr => {
                     var mediaxr = Postr.media[0];
 
@@ -45,7 +45,7 @@ module.exports={
               
                 
                     sc.setColor(0x2f3136)
-                    sc.setDescription(`**${message.author.username}** screams 😱`)
+                    sc.setDescription(`**${message.author.username}** laughs 😂`)
                     sc.setImage(gifr.url)
                     sc.setTimestamp(new Date())
                     sc.setFooter("Hiroko", bot.user.avatarURL())

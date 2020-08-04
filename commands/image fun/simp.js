@@ -20,7 +20,7 @@ module.exports={
             ctx.drawImage(sim, 0, 0);
             ctx.rotate(-19.06 * (Math.PI / 180));
             ctx.beginPath();
-            ctx.arc(270, 330, 155, 0, Math.PI * 2, true);
+            ctx.arc(270, 330, 155, 0, Math.PI * 2, true); //155 3rd option
             ctx.closePath();
             ctx.clip();
             ctx.drawImage(sava, 110, 155, 360, 360);

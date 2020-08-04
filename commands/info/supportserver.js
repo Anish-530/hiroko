@@ -7,6 +7,6 @@ module.exports={
     aliases: ['ss', 'support','botserver'],
     usage: 'hey supportserver',
     run: async(bot, message, args)=>{
-        message.channel.send('https://discord.gg/ZKfWu4H Yay! Welcome!');
+        message.channel.send('https://discord.gg/ZKfWu4H Thank You for Joining');
     }
 }

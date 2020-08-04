@@ -20,9 +20,10 @@ const Timeout = new Set();
 
 const request = require('request');
 const {MessageCollector} = require('discord.js-collector');
+const path = require('path');
 const ms = require('ms')
 
-
+const filter = m => m.content.includes('discord');
 
 
 
@@ -30,19 +31,8 @@ const ms = require('ms')
 const PREFIX = 'hey ';
 
 
-
-
-setInterval(function(){
-    let act = [
-        { name: `hey help on ${bot.guilds.cache.size} servers 🎮`, type: "WATCHING" },
-        { name: `${bot.users.cache.size} users world wide 🎧`, type: "LISTENING" },
-        { name: `hey help 🙌`, type: "LISTENING" },
-    ]
-    let ac = act[Math.floor(Math.random() * act.length)];
-    bot.user.setActivity(ac, {type: "WATCHING"});
-},8000)
-
 bot.on('ready', () => {
+    bot.user.setActivity(`hey help | on ${bot.guilds.cache.size} guilds`, {type: "PLAYING"});
     console.log(`Hello, I am online on ${bot.guilds.cache.size} servers and serving ${bot.users.cache.size} users`);
 })
 

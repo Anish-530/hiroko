@@ -8,11 +8,11 @@ const Tenor = require("tenorjs").client({
 });
 const {MessageEmbed} = require('discord.js');
 module.exports={
-    name: 'slap',
+    name: 'blush',
     category: 'interaction',
-    description: 'Slap someone',
-    aliases: [],
-    usage: 'hey slap <member>',
+    description: 'blush at someone',
+    aliases: ['shy'],
+    usage: 'hey blush <member>',
     run: async(bot, message, args)=>{
         const mentionedddMember111 = message.mentions.users.first()
                 //changed
@@ -20,14 +20,13 @@ module.exports={
 
                     if (message.mentions.members.first().id === bot.user.id) {
                   
-                     return message.channel.send(`*Bully 🤕*`)
+                     return message.channel.send(`*kawaiiii!!!!!!!*`)
                   
                     }
                 }
-        if (!mentionedddMember111) { return message.channel.send("Don't slap anyone please 😢"); }
-        else if (mentionedddMember111.id === message.author) { return message.channel.send("Don't slap yourself please 😢") }
-        const slapp = await message.channel.send("\`Slapping\`")
-        Tenor.Search.Random("anime slap", "1").then(Results111 => {
+        if (mentionedddMember111 === message.author) return message.channel.send("*nom*")
+        const slapp = await message.channel.send("\`Blushing...\`")
+        Tenor.Search.Random("anime blush", "1").then(Results111 => {
             Results111.forEach(Post111 => {
                 var mediax111 = Post111.media[0];
                 console.log(mediax111.gif);
@@ -36,7 +35,7 @@ module.exports={
                 let ki11 = new Discord.MessageEmbed()
                 
                 ki11.setColor(0x2f3136)
-                ki11.setDescription(`Oops! **${message.author.username}** slaps **${mentionedddMember111.username}** 🥺`)
+                ki11.setDescription(`**${message.author.username}** blushes 😊`)
                 ki11.setImage(gif111.url)
                 ki11.setTimestamp(new Date())
                 ki11.setFooter("Hiroko", bot.user.avatarURL())

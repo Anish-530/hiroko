@@ -8,26 +8,26 @@ const Tenor = require("tenorjs").client({
 });
 const {MessageEmbed} = require('discord.js');
 module.exports={
-    name: 'lick',
+    name: 'pat',
     category: 'interaction',
-    description: 'lick yourself or lick someone',
+    description: 'pat yourself or pat someone',
     aliases: [],
-    usage: 'hey lick [user]',
+    usage: 'hey pat [user]',
     run: async(bot, message, args)=>{
                         //changed
                         if (message.mentions.members.first() !== undefined) {
 
                             if (message.mentions.members.first().id === bot.user.id) {
                           
-                             return message.channel.send(`*>w<*`)
+                             return message.channel.send(`*n-n-n-ny-nya-nyaaaaa >v<*`)
                           
                             }
                         }
-        const patt = await message.channel.send("\`Licking...\`")
+        const patt = await message.channel.send("\`Patting...\`")
         let mentionedddMembere222ba = message.mentions.users.first()
         let scba = new Discord.MessageEmbed()
         if(message.author === mentionedddMembere222ba) {
-            Tenor.Search.Random("anime licking", "1").then(Resultsrbs => {
+            Tenor.Search.Random("anime pat", "1").then(Resultsrbs => {
                 Resultsrbs.forEach(Postrbs => {
                     var mediaxrbs = Postrbs.media[0];
                     console.log(mediaxrbs.gif);
@@ -36,7 +36,7 @@ module.exports={
                     let nscba = new Discord.MessageEmbed()
                 
                     nscba.setColor(0x2f3136)
-                    nscba.setDescription(`**${message.author.username}** lick themselves 🥺`)
+                    nscba.setDescription(`**${message.author.username}** pat themselves 🥺`)
                     nscba.setImage(gifrbs.url)
                     nscba.setTimestamp(new Date())
                     nscba.setFooter("Hiroko", bot.user.avatarURL())
@@ -45,7 +45,7 @@ module.exports={
             })
         }
         else if (mentionedddMembere222ba) {
-            Tenor.Search.Random("anime licking", "1").then(Resultsrba => {
+            Tenor.Search.Random("anime pat", "1").then(Resultsrba => {
                 Resultsrba.forEach(Postrba => {
                     var mediaxrba = Postrba.media[0];
                     console.log(mediaxrba.gif);
@@ -53,7 +53,7 @@ module.exports={
                     console.log(gifrba)
                     
                     scba.setColor(0x2f3136)
-                    scba.setDescription(`**${message.author.username}** licks **${mentionedddMembere222ba.username}** 🤩`)
+                    scba.setDescription(`**${message.author.username}** pats **${mentionedddMembere222ba.username}** 🤩`)
                     scba.setImage(gifrba.url)
                     scba.setTimestamp(new Date())
                     scba.setFooter("Hiroko", bot.user.avatarURL())
@@ -62,7 +62,7 @@ module.exports={
             })
         }
         else if (!mentionedddMembere222ba) {
-            Tenor.Search.Random("anime licking", "1").then(Resultsrbs => {
+            Tenor.Search.Random("anime pat", "1").then(Resultsrbs => {
                 Resultsrbs.forEach(Postrbs => {
                     var mediaxrbs = Postrbs.media[0];
                     console.log(mediaxrbs.gif);
@@ -71,7 +71,7 @@ module.exports={
                     let nscba = new Discord.MessageEmbed()
               
                     nscba.setColor(0x2f3136)
-                    nscba.setDescription(`**${message.author.username}** lick themselves 🥺`)
+                    nscba.setDescription(`**${message.author.username}** pat themselves 🥺`)
                     nscba.setImage(gifrbs.url)
                     nscba.setTimestamp(new Date())
                     nscba.setFooter("Hiroko", bot.user.avatarURL())
