@@ -16,7 +16,7 @@ module.exports={
     run: async(bot, message, args)=>{
         let arv = message.content.toLowerCase().substring(11);
         if(!arv) {return message.channel.send("**You have to give me something to search! **. Example : `hey search anime hugs`");}
-        const searchh = await message.channel.send(`**Searching for ${arv} gif**`)
+        const searchh = await message.channel.send(`**Searching for** \`${arv}\` **gif**`)
         Tenor.Search.Random(arv, "1").then(Results1q => {
             Results1q.forEach(Post1q => {
                 var mediax1q = Post1q.media[0];
