@@ -100,7 +100,7 @@ module.exports={
                     fields: [
                         {
                             name: '😂 | FUN',
-                            value: `\`hey 8ball\`\n\`hey bold\`\n\`hey clap\`\n\`hey epic\`\n\`hey finduser\`\n\`hey flip\`\n\`hey hey\`\n\`hey isimp\`\n\`hey megay\`\n\`hey mesimp\`\n\`hey owofy\`\n\`hey pog\`\n\`hey sayd(say delete)\`\n\`hey say\`\n\`hey search\`\n\`hey spoil\`\n\`hey table\`\n\`hey uwufy\`\n`
+                            value: `\`hey 8ball\`\n\`hey bold\`\n\`hey clap\`\n\`hey epic\`\n\`hey flip\`\n\`hey hey\`\n\`hey isimp\`\n\`hey megay\`\n\`hey meme\`\n\`hey mesimp\`\n\`hey owofy\`\n\`hey pog\`\n\`hey sayd(say delete)\`\n\`hey say\`\n\`hey search\`\n\`hey spoil\`\n\`hey table\`\n\`hey uwufy\`\n`
                         }
                     ]
                 }
@@ -148,7 +148,7 @@ module.exports={
                     fields: [
                         {
                             name: '🤖 | INFO',
-                            value: `\`hey botinfo\`\n\`hey botinvite\`\n\`hey dmhelp\`\n\`hey help\`\n\`hey ping\`\n\`hey supportserver\`\n\`hey time\`\n\`hey uptime\`\n\`hey userinfo\`\n`
+                            value: `\`hey botinvite\`\n\`hey dmhelp\`\n\`hey help\`\n\`hey info\`\n\`hey ping\`\n\`hey stats\`\n\`hey supportserver\`\n\`hey time\`\n\`hey uptime\`\n\`hey userinfo\`\n`
                         }
                     ]
                 }
