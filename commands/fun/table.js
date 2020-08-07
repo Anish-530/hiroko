@@ -4,7 +4,7 @@ module.exports={
     name: 'table',
     category: 'fun',
     description: 'shows a small animation',
-    aliases: ['angrytable', 'angry', 'angy', 'arghh'],
+    aliases: ['angrytable', 'arghh'],
     usage: 'hey table',
     run: async(bot, message, args)=>{
         const pk = await message.channel.send("**Ready?**")
