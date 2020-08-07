@@ -195,8 +195,8 @@ module.exports={
                     title: 'Use the :arrow_backward: or :arrow_forward: reactions to navigate through the pages and 🗑 to delete the embed.\nUse \`hey help [command]\` to get more information about a specific command.',
                     fields: [
                         {
-                            name: 'This is the last page',
-                            value: `\`\`\`More commands are being added everyday\`\`\``
+                            name: '🤝 | INTERACTION',
+                            value: `\`hey angry\`\n\`hey baka\`\n\`hey blush\`\n\`hey carry\`\n\`hey cry\`\n\`hey dab\`\n\`hey drink\`\n\`hey explode\`\n\`hey greet\`\n\`hey handhold\`\n\`hey highfive\`\n\`hey hug\`\n\`hey kill\`\n\`hey kiss\`\n\`hey laugh\`\n\`hey lick\`\n\`hey nom\`\n\`hey pat\`\n\`hey poke\`\n\`hey pout\`\n\`hey punch\`\n\`hey scream\`\n\`hey shoot\`\n\`hey slap\`\n\`hey sniff\`\n\`hey stare\`\n\`hey tickle\`\n\`hey wag\`\n`
                         }
                     ]
                 }
