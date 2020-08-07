@@ -31,6 +31,6 @@ module.exports={
                 kiq.setFooter("Hiroko", bot.user.avatarURL())
                 return searchh.edit("\t", kiq)
             });
-        }).catch(console.error);
+        }).catch(console.error)
     }
 }
