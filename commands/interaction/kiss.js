@@ -24,7 +24,8 @@ module.exports={
                   
                     }
                 }
-        else if (mentionedddMember11 === message.author) { return message.channel.send("Never seen someone kissing themselves 👀") }
+        if (mentionedddMember11.id === message.author.id) return message.channel.send("Never seen someone kissing themselves 👀")
+        if(!args[0]) return message.reply('Seems like you love yourself very much 👀')
         const kisss = await message.channel.send("\`Kissing....\`")
         Tenor.Search.Random("anime kiss", "1").then(Results1 => {
             Results1.forEach(Post1 => {
