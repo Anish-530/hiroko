@@ -25,6 +25,8 @@ module.exports={
             VERIFIED_DEVELOPER: 'Verified Bot Developer'
         };
         const member = message.mentions.members.last() || message.member;
+        var game = member.presence.game;
+        game.name = game.name.toString();
         const roles = member.roles.cache
             .sort((a, b) => b.position - a.position)
             .map(role => role.toString())
@@ -43,7 +45,7 @@ module.exports={
                 `**❯ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
                 `**❯ Account Creation Detail:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`,
                 `**❯ Status:** ⚫ ${statuser}`,
-                `**❯ Game:** ${member.user.presence.game || 'Not playing a game right now'}`,
+                `**❯ Game:** ${game.name || 'Not playing a game right now'}`,
                 `\u200b`
             ])
         }
@@ -56,7 +58,7 @@ module.exports={
                 `**❯ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
                 `**❯ Account Creation Detail:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`,
                 `**❯ Status:** 🟢 ${statuser}`,
-                `**❯ Game:** ${member.user.presence.game || 'Not playing a game right now'}`,
+                `**❯ Game:** ${game.name|| 'Not playing a game right now'}`,
                 `\u200b`
             ])
         }
@@ -69,7 +71,7 @@ module.exports={
                 `**❯ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
                 `**❯ Account Creation Detail:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`,
                 `**❯ Status:** 🔴 ${statuser}`,
-                `**❯ Game:** ${member.user.presence.game || 'Not playing a game right now'}`,
+                `**❯ Game:** ${game.name || 'Not playing a game right now'}`,
                 `\u200b`
             ])
         }
@@ -82,7 +84,7 @@ module.exports={
                 `**❯ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
                 `**❯ Account Creation Detail:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`,
                 `**❯ Status:** 🟡 ${statuser}`,
-                `**❯ Game:** ${member.user.presence.game || 'Not playing a game right now'}`,
+                `**❯ Game:** ${game.name || 'Not playing a game right now'}`,
                 `\u200b`
             ])
         }
