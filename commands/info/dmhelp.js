@@ -82,6 +82,7 @@ module.exports={
     category: 'info',
     description: 'get a list of all the commands straight to your DMs',
     aliases: ['dh'],
+    usage: 'hey dmhelp',
     run: async(bot, message, args)=>{
         if(!args[0]) {
         const emojis = {

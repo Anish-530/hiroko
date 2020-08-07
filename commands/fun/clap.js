@@ -3,7 +3,7 @@ const {MessageEmbed} = require('discord.js');
 module.exports={
     name: 'clap',
     category: 'fun',
-    description: 'Displays claps between text',
+    description: 'Displays \'claps\' between text you provide',
     aliases: [],
     usage: 'hey clap <your text>',
     run: async(bot, message, args)=>{

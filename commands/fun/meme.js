@@ -7,7 +7,7 @@ module.exports={
     category: 'fun',
     description: 'I N H A L E in some memes',
     aliases: [],
-    usage: 'hey kiss',
+    usage: 'hey meme',
     run: async(bot, message, args)=> {
         https.get(url, (result) => {
             var body = ''

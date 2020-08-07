@@ -5,7 +5,7 @@ module.exports={
     category: 'fun',
     description: 'Make Hiroko say something',
     aliases: [],
-    usage: 'hey say <Your text>',
+    usage: 'hey say <your text>',
     run: async(bot, message, args)=>{
         const sa = args.slice(0).join(' ');
         if(sa) {

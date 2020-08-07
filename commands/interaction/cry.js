@@ -12,7 +12,7 @@ module.exports={
     category: 'interaction',
     description: 'cry for yourself or cry for someone',
     aliases: ['sad'],
-    usage: 'hey cry [user]',
+    usage: 'hey cry [mention someone]',
     run: async(bot, message, args)=>{
         const mentionedddMembere222b = message.mentions.users.first()
                 //changed

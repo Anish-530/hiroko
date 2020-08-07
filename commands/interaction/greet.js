@@ -12,7 +12,7 @@ module.exports={
     category: 'interaction',
     description: 'greet someone',
     aliases: [],
-    usage: 'hey greet <member>',
+    usage: 'hey greet <mention someone>',
     run: async(bot, message, args)=>{
         const mentionedddMember111 = message.mentions.users.first()
                 //changed
@@ -27,7 +27,7 @@ module.exports={
         if (!mentionedddMember111) return message.channel.send("Whom are you greeting?")
         if (mentionedddMember111.id === message.author.id) return message.channel.send("Are you greeting yourself infront of a mirror?")
         const slapp = await message.channel.send("\`Greeting...\`")
-        Tenor.Search.Random("anime greet", "1").then(Results111 => {
+        Tenor.Search.Random("anime greeting", "1").then(Results111 => {
             Results111.forEach(Post111 => {
                 var mediax111 = Post111.media[0];
                 console.log(mediax111.gif);

@@ -12,7 +12,7 @@ module.exports={
     category: 'interaction',
     description: 'call someone baka',
     aliases: ['fool'],
-    usage: 'hey baka <user>',
+    usage: 'hey baka <mention someone>',
     run: async(bot, message, args)=>{
         const mentionedddMember1113 = message.mentions.users.first() || message.author;
         if (!mentionedddMember1113) { return message.channel.send(`**${message.author.username}** calls themselves baka! `); }

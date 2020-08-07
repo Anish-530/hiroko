@@ -12,7 +12,7 @@ module.exports={
     category: 'interaction',
     description: 'carry someone',
     aliases: ['pick', 'up'],
-    usage: 'hey carry [user]',
+    usage: 'hey carry [mention someone]',
     run: async(bot, message, args)=>{
                         //changed
                         if (message.mentions.members.first() !== undefined) {

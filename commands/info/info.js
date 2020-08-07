@@ -3,7 +3,7 @@ const {MessageEmbed} = require('discord.js');
 module.exports={
     name: 'info',
     category: 'info',
-    description: 'displays information about the bot',
+    description: 'displays information about Hiroko',
     aliases: ['bot','botinfo'],
     usage: 'hey info',
     run: async(bot, message, args)=>{

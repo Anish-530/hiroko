@@ -4,7 +4,7 @@ const {MessageEmbed} = require('discord.js');
 module.exports={
     name: 'userinfo',
     category: 'info',
-    description: 'Display the full info of an user',
+    description: 'Display the info of an user',
     timeout: 10000,
     aliases: ['info'],
     usage: 'hey userinfo [mention someone]',

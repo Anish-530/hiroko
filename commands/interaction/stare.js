@@ -12,7 +12,7 @@ module.exports={
     category: 'interaction',
     description: 'stare at someone',
     aliases: ['jii'],
-    usage: 'hey stare <member>',
+    usage: 'hey stare <mention someone>',
     run: async(bot, message, args)=>{
         const mentionedddMember111 = message.mentions.users.first()
                 //changed

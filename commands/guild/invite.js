@@ -4,7 +4,7 @@ const { manageAPI } = require('tenorjs/src/Tools/Utilities');
 module.exports={
     name: 'invite',
     category: 'guild',
-    description: 'Create an instant invite of the server',
+    description: 'Create an instant invite of the server, where the command is used',
     timeout: 10000,
     aliases: ['link','inv','serverinvite','servinv'],
     usage: 'hey invite <Max uses of the link>',

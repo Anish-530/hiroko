@@ -7,7 +7,7 @@ module.exports={
     category: 'image fun',
     description: 'Cheat? Nah! it\'s something else',
     aliases: [],
-    usage: 'hey cheat <text>',
+    usage: 'hey cheat <your text>',
     run: async(bot, message, args)=>{
         try{
             const de = await loadImage('./cheat.jpg');

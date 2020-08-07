@@ -5,7 +5,7 @@ module.exports={
     category: 'fun',
     description: 'make something bold',
     aliases: [],
-    usage: 'hey bold <text>',
+    usage: 'hey bold <your text>',
     run: async(bot, message, args)=>{
         let bo = message.content.toLowerCase().substring(8);
         if(!bo) {

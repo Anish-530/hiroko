@@ -12,7 +12,7 @@ module.exports={
     category: 'interaction',
     description: 'tickle someone or tickle yourself',
     aliases: [],
-    usage: 'hey tickle [user]',
+    usage: 'hey tickle [mention someone]',
     run: async(bot, message, args)=>{
         const mentionedddMembere222bbb = message.mentions.users.first()
                 //changed

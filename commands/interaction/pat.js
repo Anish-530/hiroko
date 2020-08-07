@@ -12,7 +12,7 @@ module.exports={
     category: 'interaction',
     description: 'pat yourself or pat someone',
     aliases: [],
-    usage: 'hey pat [user]',
+    usage: 'hey pat [mention someone]',
     run: async(bot, message, args)=>{
                         //changed
                         if (message.mentions.members.first() !== undefined) {

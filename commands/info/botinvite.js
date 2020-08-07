@@ -3,7 +3,7 @@ const {MessageEmbed} = require('discord.js');
 module.exports={
     name: 'botinvite',
     category: 'info',
-    description: 'Gives you the Hiroko\'s invite Link, to invite it to other servers',
+    description: 'Provides you with Hiroko\'s invite link',
     aliases: ['botinv', 'botlink'],
     usage: 'hey botinvite',
     run: async(bot, message, args)=>{

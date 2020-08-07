@@ -7,7 +7,7 @@ module.exports={
     category: 'image fun',
     description: 'make yourself or anyone bad (get or make affected)',
     aliases: [],
-    usage: 'hey bad [user]',
+    usage: 'hey bad [mention someone]',
     run: async(bot, message, args)=>{
         try{
             const bad = message.mentions.users.first() || message.author

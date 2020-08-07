@@ -12,7 +12,7 @@ module.exports={
     category: 'interaction',
     description: 'Are you angy?',
     aliases: ['angy'],
-    usage: 'hey angry [user]',
+    usage: 'hey angry [mention someone]',
     run: async(bot, message, args)=>{
         const mentionedddMembere222 = message.mentions.users.first()
         if (message.mentions.members.first() !== undefined) {

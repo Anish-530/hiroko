@@ -5,7 +5,7 @@ module.exports={
     category: 'fun',
     description: 'check your epicness',
     aliases: [],
-    usage: 'hey epic [user]',
+    usage: 'hey epic [mention someone]',
     run: async(bot, message, args)=>{
         let em2c = new MessageEmbed()
         const mentioneddMemberrc = message.mentions.members.first()

@@ -3,9 +3,9 @@ const {MessageEmbed} = require('discord.js');
 module.exports={
     name: 'uwufy',
     category: 'fun',
-    description: 'uwu-fy something',
+    description: 'uwu-fy the text you provide',
     aliases: ['uwu'],
-    usage: 'hey uwu <text>',
+    usage: 'hey uwu <your text>',
     run: async(bot, message, args)=>{
         let ow = args.join(' UwU ')
         if(!ow) {

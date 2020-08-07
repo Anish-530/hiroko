@@ -3,7 +3,7 @@ const {MessageEmbed} = require('discord.js');
 module.exports={
     name: 'finduser',
     category: 'fun',
-    description: 'Find an user from the guild, the command is executed from!',
+    description: 'Find an user from the guild, where the command is used',
     aliases: ['fu','find'],
     run: async(bot, message, args)=>{
         if(!args.length) return message.channel.send('You have to atleast provide a name, for me to search for it!');

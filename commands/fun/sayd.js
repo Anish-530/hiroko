@@ -3,9 +3,9 @@ const {MessageEmbed} = require('discord.js');
 module.exports={
     name: 'sayd',
     category: 'fun',
-    description: 'Make the bot say anything and delete your message with which you commanded',
+    description: 'Make the Hiroko say something\, and delete the message immediately',
     aliases: [],
-    usage: 'hey sayd <Your Text>',
+    usage: 'hey sayd <your Text>',
     run: async(bot, message, args)=>{
         const sad = args.slice(0).join(' ');
         if(sad) {

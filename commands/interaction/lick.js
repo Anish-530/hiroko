@@ -12,7 +12,7 @@ module.exports={
     category: 'interaction',
     description: 'lick yourself or lick someone',
     aliases: [],
-    usage: 'hey lick [user]',
+    usage: 'hey lick [mention someone]',
     run: async(bot, message, args)=>{
                         //changed
                         if (message.mentions.members.first() !== undefined) {

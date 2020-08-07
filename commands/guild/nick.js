@@ -3,7 +3,7 @@ const {MessageEmbed} = require('discord.js');
 module.exports={
     name: 'nick',
     category: 'guild',
-    description: 'change the server name of a member',
+    description: 'change the nickname of a member',
     aliases: ['rename'],
     usage: 'hey nick <mention someone> <the name>',
     run: async(bot, message, args)=>{

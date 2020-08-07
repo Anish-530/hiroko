@@ -4,9 +4,9 @@ const {MessageEmbed} = require('discord.js');
 module.exports={
     name: 'flip',
     category: 'fun',
-    description: 'flip what you say!',
+    description: 'Flips the text you provided!',
     aliases: [],
-    usage: 'hey flip <text>',
+    usage: 'hey flip <your text>',
     run: async(bot, message, args)=>{
         let fl = args.slice(0).join(' ');
         if(!fl) return message.channel.send("Give me something to flip. I don\'t want to flip myself 🤷‍♀️")

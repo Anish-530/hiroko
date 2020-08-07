@@ -3,11 +3,11 @@ const {MessageEmbed} = require('discord.js');
 module.exports={
     name: 'uptime',
     category: 'info',
-    description: 'Check the uptime of the bot',
+    description: 'Check the uptime of Hiroko',
     aliases: ['ut'],
     usage: 'hey uptime',
     run: async(bot, message, args)=>{
-        const nm = await message.channel.send("**Calculating....**")
+        const nm = await message.channel.send("\`Calculating....\`")
         let totalSeconds = (bot.uptime / 1000);
         let days = Math.floor(totalSeconds / 86400);
         let hours = Math.floor(totalSeconds / 3600);

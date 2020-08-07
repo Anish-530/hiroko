@@ -12,7 +12,7 @@ module.exports={
     category: 'interaction',
     description: 'punch someone or punch yourself',
     aliases: [],
-    usage: 'hey punch [user]',
+    usage: 'hey punch [mention someone]',
     run: async(bot, message, args)=>{
         const mentionedddMembere222bbb = message.mentions.users.first()
                 //changed

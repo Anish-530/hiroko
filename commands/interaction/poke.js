@@ -12,7 +12,7 @@ module.exports={
     category: 'interaction',
     description: 'poke someone or poke yourself',
     aliases: ['boop'],
-    usage: 'hey poke [user]',
+    usage: 'hey poke [mention someone]',
     run: async(bot, message, args)=>{
         let mentionedddMembere222baq = message.mentions.users.first()
         let scbaq = new Discord.MessageEmbed()
