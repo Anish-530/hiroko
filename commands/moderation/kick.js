@@ -8,6 +8,7 @@ module.exports={
     usage: 'hey kick <mention the user you want to kick>',
     run: async(bot, message, args)=>{
         if (!message.member.hasPermission('KICK_MEMBERS')) return message.reply('Sorry! Your roles are too low to Kick someone :(').then(message => message.delete({ timeout: 2000 }));
+        if(!message.member.guild.me.hasPermission(['KICK_MEMBERS'])) return message.channel.send("I don\'t have the permission to \`KICK MEMBERS\`.\nPlease provide me the following permission to use this command")
         if (!args[0]) return message.reply('You need to Mention whom you want to kick :) . Ex: hey kick @someone').then(message => message.delete({ timeout: 3000 }));
 
         const user = message.mentions.users.first();

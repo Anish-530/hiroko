@@ -7,8 +7,8 @@ module.exports={
     aliases: [],
     usage: 'hey ban <mention the user you want to ban>',
     run: async(bot, message, args)=>{
-        if (!message.member.hasPermission(['BAN_MEMBERS', 'ADMINISTRATOR'])) return message.reply('Sorry! Your roles are too low to ban someone :(').then(message => message.delete({ timeout: 5000 }));
-                
+        if (!message.member.hasPermission(['BAN_MEMBERS'])) return message.reply('Sorry! Your roles are too low to ban someone :(').then(message => message.delete({ timeout: 5000 }));
+        if(!message.member.guild.me.hasPermission(['BAN_MEMBERS'])) return message.channel.send("I don\'t have the permission to \`BAN MEMBERS\`.\nPlease provide me the following permission to use this command")  
         const userb = message.mentions.users.first();
         if (!userb) return message.reply('You need to mention whom you want to ban!. Ex: hey ban @Someone').then(message => message.delete({ timeout: 6000 }));
         else if (userb) {

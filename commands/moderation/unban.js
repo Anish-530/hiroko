@@ -7,8 +7,8 @@ module.exports={
     aliases: [],
     usage: 'hey unban <mention the user you want to unban or put their ID here>',
     run: async(bot, message, args)=>{
-        if(!message.member.hasPermission(["BAN_MEMBERS", "ADMINISTRATOR"])) return message.reply("Your roles are too low to use this commaned :(");
-
+        if(!message.member.hasPermission(["BAN_MEMBERS"])) return message.reply("Your roles are too low to use this commaned :(");
+        if(!message.member.guild.me.hasPermission(['BAN_MEMBERS'])) return message.channel.send("I don\'t have the permission to \`UNBAN MEMBERS\`.\nPlease provide me the following permission to use this command")
         if(!args[0]) return message.channel.send("You need to mention the user, you want to **unban**"); 
     
     
