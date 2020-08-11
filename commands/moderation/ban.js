@@ -13,13 +13,13 @@ module.exports={
         if (!userb) return message.reply('You need to mention the user, whom you want to **ban**.\nEx: \`hey ban @the-user-you-want-to-ban\`').then(message => message.delete({ timeout: 6000 }));
         else if (userb) {
             const memberb = message.guild.member(userb);
+            let reason = args.slice(3).join(" ")
+            if(!reason) reason = "No reason was provided"
             if (memberb) {
-                memberb.ban({ ression: 'You were banned!' }).then(() => {
-                    let reason = args.slice(1).join(" ")
-                    if(!reason) reason = "No reason was provided"
+                memberb.ban(reason).then(() => {
                     let uban = new Discord.MessageEmbed()
                     uban.setAuthor("Command used by " + message.author.username, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
-                    uban.setDescription(`**${userb.tag}** was successfully banned from **${message.guild.name}** 🤕.\nReason for being banned : ${reason}`)
+                    uban.setDescription(`**${userb.tag}** was successfully banned from **${message.guild.name}** 🤕.\nReason for banning **${userb.tag}** : ${reason}`)
                     uban.setColor(0xf94343)
                     uban.setTimestamp(new Date())
                     uban.setFooter("Hiroko", bot.user.avatarURL())

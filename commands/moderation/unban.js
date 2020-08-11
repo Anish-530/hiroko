@@ -28,13 +28,13 @@ module.exports={
                 return;
             }
     
-        let reason = args.slice(1).join(" ")
+        let reason = args.slice(3).join(" ")
         if(!reason) reason = "No reason was provided"
         try {
             message.guild.members.unban(bannedMember, {reason: reason})
             let uban1 = new Discord.MessageEmbed()
             uban1.setAuthor("Command used by " + message.author.username, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
-            uban1.setDescription(`**${bannedMember.tag}** was successfully unbanned 🎉.\nReason for being banned : ${reason}`)
+            uban1.setDescription(`**${bannedMember.tag}** was successfully unbanned 🎉.\nReason why **${bannedMember.tag}** was banned : ${reason}`)
             uban1.setColor(0x2ac075)
             uban1.setTimestamp(new Date())
             uban1.setFooter("Hiroko", bot.user.avatarURL())

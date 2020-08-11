@@ -15,13 +15,21 @@ module.exports={
 
         if (user) {
             const member = message.guild.member(user);
-
+            let reon = args.slice(3).join(" ")
+            if(!reon) reon = "No reason was provided"
             if (member) {
-                member.kick('You were kicked! :( ').then(() => {
-                    message.reply(`Successfully Kicked ${user.tag}`).then(message => message.delete({ timeout: 3000 }));
+                member.kick(reon).then(() => {
+                    const kickem = new Discord.MessageEmbed()
+                    kickem.setAuthor("Command used by " + message.author.username, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
+                    kickem.setDescription(`**${user.tag}** was successfully kicked from **${message.guild.name}** 😶.\nReason for kick : **${reason}**`)
+                    kickem.setColor(0xf94343)
+                    kickem.setTimestamp(new Date())
+                    kickem.setFooter("Hiroko", bot.user.avatarURL())
+                    message.channel.send(kickem);
                     message.react('👍');
                 }).catch(err => {
                     message.reply('Hey! Sorry I was unable to kick the member')
+                    message.react('👎');
                     console.log(err);
                 });
 
