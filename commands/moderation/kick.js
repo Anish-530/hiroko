@@ -15,7 +15,7 @@ module.exports={
 
         if (user) {
             const member = message.guild.member(user);
-            let reon = args.slice(3).join(" ")
+            let reon = args.slice(1).join(" ")
             if(!reon) reon = "No reason was provided"
             if (member) {
                 member.kick(reon).then(() => {

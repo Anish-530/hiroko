@@ -13,7 +13,7 @@ module.exports={
         if (!userb) return message.reply('You need to mention the user, whom you want to **ban**.\nEx: \`hey ban @the-user-you-want-to-ban\`').then(message => message.delete({ timeout: 6000 }));
         else if (userb) {
             const memberb = message.guild.member(userb);
-            let reason = args.slice(3).join(" ")
+            let reason = args.slice(1).join(" ")
             if(!reason) reason = "No reason was provided"
             if (memberb) {
                 memberb.ban(reason).then(() => {

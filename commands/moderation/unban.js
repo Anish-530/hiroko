@@ -28,7 +28,7 @@ module.exports={
                 return;
             }
     
-        let reason = args.slice(3).join(" ")
+        let reason = args.slice(1).join(" ")
         if(!reason) reason = "No reason was provided"
         try {
             message.guild.members.unban(bannedMember, {reason: reason})
