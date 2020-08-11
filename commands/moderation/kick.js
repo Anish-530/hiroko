@@ -28,7 +28,7 @@ module.exports={
                     message.channel.send(kickem);
                     message.react('👍');
                 }).catch(err => {
-                    message.reply('Hey! Sorry I was unable to kick the member')
+                    message.reply(`Error: ${err.message}`)
                     message.react('👎');
                     console.log(err);
                 });
