@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const Tenor = require("tenorjs").client({
     "Key": "JLH9C6HHQDVR", // https://tenor.com/developer/keyregistration
-    "Filter": "off", // "off", "low", "medium", "high", not case sensitive
+    "Filter": "high", // "off", "low", "medium", "high", not case sensitive
     "Locale": "en_US", // Your locale here, case-sensitivity depends on input
     "MediaFilter": "basic", // either minimal or basic, not case sensitive
     "DateFormat": "D/MM/YYYY - H:mm:ss A" // Change this accordingly
@@ -25,7 +25,7 @@ module.exports={
                 console.log(gif1q)
                 let kiq = new Discord.MessageEmbed()
                 kiq.setColor(0x2f3136)
-                kiq.setDescription(`Here is your **${arv}** gif! **${message.author.username}**`)
+                kiq.setDescription(`**${message.author.username}** Here is your **${arv}** gif!`)
                 kiq.setImage(gif1q.url)
                 kiq.setTimestamp(new Date())
                 kiq.setFooter("Hiroko", bot.user.avatarURL())
