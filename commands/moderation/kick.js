@@ -21,7 +21,7 @@ module.exports={
                 member.kick(reon).then(() => {
                     const kickem = new Discord.MessageEmbed()
                     kickem.setAuthor("Command used by " + message.author.username, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
-                    kickem.setDescription(`**${user.tag}** was successfully kicked from **${message.guild.name}** 😶.\nReason for kick : **${reason}**`)
+                    kickem.setDescription(`**${user.tag}** was successfully kicked from **${message.guild.name}** 😶.\nReason for kick : **${reon}**`)
                     kickem.setColor(0xf94343)
                     kickem.setTimestamp(new Date())
                     kickem.setFooter("Hiroko", bot.user.avatarURL())
