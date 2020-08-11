@@ -10,21 +10,24 @@ module.exports={
         if (!message.member.hasPermission(['BAN_MEMBERS'])) return message.reply('Sorry! Your roles are too low to ban someone :(').then(message => message.delete({ timeout: 5000 }));
         if(!message.member.guild.me.hasPermission(['BAN_MEMBERS'])) return message.channel.send("I don\'t have the permission to \`BAN MEMBERS\`.\nPlease provide me the following permission to use this command")  
         const userb = message.mentions.users.first();
-        if (!userb) return message.reply('You need to mention whom you want to ban!. Ex: hey ban @Someone').then(message => message.delete({ timeout: 6000 }));
+        if (!userb) return message.reply('You need to mention the user, whom you want to **ban**.\nEx: \`hey ban @the-user-you-want-to-ban\`').then(message => message.delete({ timeout: 6000 }));
         else if (userb) {
             const memberb = message.guild.member(userb);
             if (memberb) {
                 memberb.ban({ ression: 'You were banned!' }).then(() => {
+                    let reason = args.slice(1).join(" ")
+                    if(!reason) reason = "No reason was provided"
                     let uban = new Discord.MessageEmbed()
                     uban.setAuthor("Command used by " + message.author.username, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
-                    uban.setDescription(`**${userb.tag}** was successfully banned from **${message.guild.name}** 🤕`)
+                    uban.setDescription(`**${userb.tag}** was successfully banned from **${message.guild.name}** 🤕.\nReason for being banned : ${reason}`)
                     uban.setColor(0xf94343)
                     uban.setTimestamp(new Date())
                     uban.setFooter("Hiroko", bot.user.avatarURL())
                     message.channel.send(uban);
                     message.react('👍');
                 }).catch(err => {
-                    message.reply('Hey! Sorry I was unable to ban the member')
+                    message.reply('Seems like, I was unable to ban that user. You can try again later')
+                    message.react('👎');
                     console.log(err);
                 });
 

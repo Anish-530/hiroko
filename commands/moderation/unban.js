@@ -7,9 +7,9 @@ module.exports={
     aliases: [],
     usage: 'hey unban <mention the user you want to unban or put their ID here>',
     run: async(bot, message, args)=>{
-        if(!message.member.hasPermission(["BAN_MEMBERS"])) return message.reply("Your roles are too low to use this commaned :(");
+        if(!message.member.hasPermission(["BAN_MEMBERS"])) return message.reply("Your roles are too low to use this commaned :(").then(message => message.delete({ timeout: 6000 }));
         if(!message.member.guild.me.hasPermission(['BAN_MEMBERS'])) return message.channel.send("I don\'t have the permission to \`UNBAN MEMBERS\`.\nPlease provide me the following permission to use this command")
-        if(!args[0]) return message.channel.send("You need to mention the user, you want to **unban**"); 
+        if(!args[0]) return message.reply("You need to mention the user, whom you want to **unban**.\nEx: \`hey unban @the-user-you-want-to-unban\`").then(message => message.delete({ timeout: 6000 }));
     
     
         let bannedMember;
@@ -17,7 +17,7 @@ module.exports={
         try{                                                            
             bannedMember = await bot.users.fetch(args[0])
         }catch(e){
-            if(!bannedMember) return message.channel.send("That's not a valid ID")
+            if(!bannedMember) return message.channel.send("That\'s not a valid ID")
         }
     
         
@@ -29,20 +29,20 @@ module.exports={
             }
     
         let reason = args.slice(1).join(" ")
-        if(!reason) reason = "..."
-    
-        if(!message.guild.me.hasPermission(["BAN_MEMBERS", "ADMINISTRATOR"])) return message.channel.send("I can't do that")
+        if(!reason) reason = "No reason was provided"
         try {
             message.guild.members.unban(bannedMember, {reason: reason})
             let uban1 = new Discord.MessageEmbed()
             uban1.setAuthor("Command used by " + message.author.username, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
-            uban1.setDescription(`**${bannedMember.tag}** was successfully unbanned 🎉`)
+            uban1.setDescription(`**${bannedMember.tag}** was successfully unbanned 🎉.\nReason for being banned : ${reason}`)
             uban1.setColor(0x2ac075)
             uban1.setTimestamp(new Date())
             uban1.setFooter("Hiroko", bot.user.avatarURL())
             message.channel.send(uban1)
             message.react('👍');
         } catch(e) {
+            if(e) return message.reply('Seems like I was unable to unban that user. You can try again later')
+            message.react('👎');
             console.log(e.message)
         }
     }
