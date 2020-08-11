@@ -32,7 +32,7 @@ const PREFIX = 'hey ';
 
 
 bot.on('ready', () => {
-    bot.user.setActivity(`hey help 🟣 on ${bot.guilds.cache.size} guilds 🟣 from ${bot.users.cache.size} users`, {type: "LISTENING"});
+    bot.user.setActivity(`hey help 🟣 on ${bot.guilds.cache.size} guilds 🟣 ${bot.users.cache.size} users`, {type: "PLAYING"});
     console.log(`Hello, I am online on ${bot.guilds.cache.size} servers and serving ${bot.users.cache.size} users`);
 })
 
