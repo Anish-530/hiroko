@@ -84,6 +84,7 @@ module.exports={
     aliases: ['dh'],
     usage: 'hey dmhelp',
     run: async(bot, message, args)=>{
+        message.react('📧');
         if(!args[0]) {
         const emojis = {
             firstPage: '⏮',
