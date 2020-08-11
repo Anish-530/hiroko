@@ -18,7 +18,7 @@ module.exports={
         }
         if(amount) {
             message.channel.bulkDelete(amount);
-            message.channel.send("Successfully cleared `" + `${amount.size}` + "` messages :)").then(message => message.delete({ timeout: 2000 }));
+            message.channel.send("Successfully cleared `" + `${amount}` + "` messages :)").then(message => message.delete({ timeout: 2000 }));
         }
     }
 }
