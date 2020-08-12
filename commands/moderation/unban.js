@@ -9,7 +9,7 @@ module.exports={
     run: async(bot, message, args)=>{
         if(!message.member.hasPermission(["BAN_MEMBERS"])) return message.reply("Your roles are too low to use this commaned :(").then(message => message.delete({ timeout: 6000 }));
         if(!message.member.guild.me.hasPermission(['BAN_MEMBERS'])) return message.channel.send("I don\'t have the permission to \`UNBAN MEMBERS\`.\nPlease provide me the following permission to use this command")
-        if(!args[0]) return message.reply("You need to mention the user, whom you want to **unban**.\nEx: \`hey unban @the-user-you-want-to-unban\`").then(message => message.delete({ timeout: 6000 }));
+        if(!args[0]) return message.reply("You need to mention the user, whom you want to **unban**.\nEx: \`hey unban ID-of-the-user-you-want-to-unban\`").then(message => message.delete({ timeout: 6000 }));
     
     
         let bannedMember;
@@ -17,7 +17,7 @@ module.exports={
         try{                                                            
             bannedMember = await bot.users.fetch(args[0])
         }catch(e){
-            if(!bannedMember) return message.channel.send("That\'s not a valid ID")
+            if(!bannedMember) return message.channel.send("I want you to copy the ID of the user to unban!")
         }
     
         
