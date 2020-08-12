@@ -34,7 +34,7 @@ module.exports={
         try {
             message.guild.members.unban(bannedMember, {reason: reason})
             let uban1 = new Discord.MessageEmbed()
-            uban1.setAuthor("Ban command used by " + message.author.username, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
+            uban1.setAuthor("Unban command used by " + message.author.username, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
             uban1.setDescription(`**${bannedMember.tag}** was successfully unbanned 🎉.\nReason why **${bannedMember.tag}** was banned : ${reason}`)
             uban1.setColor(0x2ac075)
             uban1.setTimestamp(new Date())

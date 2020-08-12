@@ -20,7 +20,7 @@ module.exports={
             if (member) {
                 member.kick(reon).then(() => {
                     const kickem = new Discord.MessageEmbed()
-                    kickem.setAuthor("Command used by " + message.author.username, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
+                    kickem.setAuthor("Kick command used by " + message.author.username, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
                     kickem.setDescription(`**${user.tag}** was successfully kicked from **${message.guild.name}** 😶.\nReason for kick : **${reon}**`)
                     kickem.setColor(0xf94343)
                     kickem.setTimestamp(new Date())
@@ -28,7 +28,7 @@ module.exports={
                     message.channel.send(kickem);
                     message.react('👍');
                 }).catch(err => {
-                    message.reply(`Error: ${err.message}`)
+                    message.reply(`Looks like something wrong went, You can try again later!`)
                     message.react('👎');
                     console.log(err);
                 });
