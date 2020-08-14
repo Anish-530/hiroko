@@ -138,7 +138,7 @@ module.exports={
                     fields: [
                         {
                             name: '⛰ | IMAGE FUN',
-                            value: `\`hey bad\`\n\`hey butterfly\`\n\`hey cheat\`\n\`hey delete\`\n\`hey fakenitro\`\n\`hey nani\`\n\`hey rip\`\n\`hey simp\`\n`
+                            value: `\`hey bad\`\n\`hey butterfly\`\n\`hey delete\`\n\`hey fakenitro\`\n\`hey nani\`\n\`hey rip\`\n\`hey simp\`\n`
                         }
                     ]
                 }
