@@ -12,15 +12,14 @@ module.exports={
         if (!args[0]) return message.reply('You need to Mention whom you want to kick :) . Ex: hey kick @someone').then(message => message.delete({ timeout: 3000 }));
 
         const user = message.mentions.users.first();
-        if(user.id === message.author.id) {
-            message.channel.send(`Hey ${message.author.username}, You know you can\'t kick yourself right?`, {
-                allowedMentions: {
-                  parse: []
-                }
-              });
-            message.react('👎');
+        if(user.id === message.author.id) return message.reply('Uh! You can\'t kick yourself, you know? :/', {
+            allowedMentions: {
+              parse: []
+            }
+          });
+        if (message.mentions.members.first() !== undefined) {
+            if (message.mentions.members.first().id === bot.user.id) return message.channel.send("Why do you want to kick me 😶?") 
         }
-        if(user.id === message.author.id) return message.reply('Uh! You can\'t kick yourself, you know? :/')
         if (user) {
             const member = message.guild.member(user);
             let reon = args.slice(1).join(" ")

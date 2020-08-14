@@ -10,16 +10,15 @@ module.exports={
         if (!message.member.hasPermission(['BAN_MEMBERS'])) return message.reply('Sorry! Your roles are too low to ban someone :(').then(message => message.delete({ timeout: 5000 }));
         if(!message.member.guild.me.hasPermission(['BAN_MEMBERS'])) return message.channel.send("I don\'t have the permission to \`BAN MEMBERS\`.\nPlease provide me the following permission to use this command")  
         const userb = message.mentions.users.first();
-        if(userb.id === message.author.id) {
-            message.channel.send(`Hey ${message.author.username}, You know you can\'t ban yourself right?`, {
-                allowedMentions: {
-                  parse: []
-                }
-              });
-            message.react('👎');
-        }
         if (!userb) return message.reply('You need to mention the user, whom you want to **ban**.\nEx: \`hey ban @the-user-you-want-to-ban\`').then(message => message.delete({ timeout: 6000 }));
-        if(userb.id === message.author.id) return message.reply('Uh! You can\'t ban yourself, you know? :/')
+        if(userb.id === message.author.id) return message.reply('Uh! You can\'t ban yourself, you know? :/', {
+            allowedMentions: {
+              parse: []
+            }
+          });
+        if (message.mentions.members.first() !== undefined) {
+            if (message.mentions.members.first().id === bot.user.id) return message.channel.send("Why do you want to ban me 😶?") 
+        }
         else if (userb) {
             const memberb = message.guild.member(userb);
             let reason = args.slice(1).join(" ")
@@ -35,7 +34,7 @@ module.exports={
                     message.channel.send(uban);
                     message.react('👍');
                 }).catch(err => {
-                    message.reply('Seems like, I was unable to ban that user. You can try again later')
+                    message.channel.send('Seems like, I was unable to ban that user. You can try again later')
                     message.react('👎');
                     console.log(err);
                 });
