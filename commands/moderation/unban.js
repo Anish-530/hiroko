@@ -18,7 +18,7 @@ module.exports={
         try{                                                            
             bannedMember = await bot.users.fetch(args[0])
         }catch(e){
-            if(!bannedMember) return message.channel.send("I want you to copy the ID of the user to unban!")
+            if(!bannedMember) return message.channel.send("Please copy the ID of the user you want to unban by,\nclicking on the user\'s profile and then clicking on \'Copy ID\'")
         }
     
         
