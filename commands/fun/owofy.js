@@ -11,6 +11,10 @@ module.exports={
         if(!ow) {
             return message.channel.send("Give me something to OwO-ify");
         }
-        message.channel.send(ow + " OwO");
+        message.channel.send(ow + " OwO", {
+            allowedMentions: {
+              parse: []
+            }
+          });
     }
 }

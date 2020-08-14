@@ -11,6 +11,10 @@ module.exports={
         if(!bo) {
             return message.channel.send("Give me something to make it bold!");
         }
-        message.channel.send(`**${bo}**`);
+        message.channel.send(`**${bo}**`, {
+            allowedMentions: {
+              parse: []
+            }
+          });
     }
 }

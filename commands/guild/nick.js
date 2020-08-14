@@ -16,9 +16,13 @@ module.exports={
         else if(!uuser) return message.reply("I was unable to find that member!");
         else if(uuser === message.guild.me) return message.channel.send("Why are you trying to change my name ;-;");
         if(!namer) {
-            return message.channel.send("What shall i name "+`${uuser} ?`)
+            return message.channel.send("What shall i name "+`${uuser} ?`, {
+                allowedMentions: {
+                  parse: []
+                }
+              });
         }
-        if(!uuser.kickable) return message.channel.send('\`\`\`js\nLooks like you are trying to change a member\'s, \nname whose role is either higher than you or you are equal to their role\`\`\`')
+        if(!uuser.kickable) return message.channel.send('Looks like you are trying to change a member\'s, \nname whose role is either higher than you or you are equal to their role')
         uuser.setNickname(namer)
     }
 }

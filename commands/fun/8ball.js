@@ -67,6 +67,10 @@ module.exports={
         if(!args[1]) {
             return message.reply("You need to ask me a question!");
         }
-        message.channel.send(ball[Math.floor(Math.random() * ball.length)]);
+        message.channel.send(ball[Math.floor(Math.random() * ball.length)], {
+            allowedMentions: {
+              parse: []
+            }
+          });
     }
 }

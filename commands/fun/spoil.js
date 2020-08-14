@@ -12,6 +12,10 @@ module.exports={
     const bbb = aaa.split('|| ||').join('|| ||');
     const ccc = '||' + bbb + '||';
     message.delete()
-    message.channel.send(ccc);
+    message.channel.send(ccc, {
+        allowedMentions: {
+          parse: []
+        }
+      });
     }
 }

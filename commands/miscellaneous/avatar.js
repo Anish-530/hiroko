@@ -7,6 +7,7 @@ module.exports={
     aliases: ['av'],
     usage: 'hey avatar [mention someone]',
     run: async(bot, message, args)=>{
+        try{
         const memberr = message.mentions.users.first() || message.author;
         let em = new MessageEmbed()
         em.setImage(memberr.displayAvatarURL({ dynamic: true, format: 'png', size: 512 }))
@@ -16,5 +17,8 @@ module.exports={
         ])
         em.setFooter(`Oh! Btw Nice pfp! ngl 😏`)
         message.channel.send(em);
+    }catch(err){
+        if(err) return message.channel.send('I was unable to find that member :(');
+    }
     }
 }

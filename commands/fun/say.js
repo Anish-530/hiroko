@@ -9,7 +9,11 @@ module.exports={
     run: async(bot, message, args)=>{
         const sa = args.slice(0).join(' ');
         if(sa) {
-            message.channel.send(sa);
+            message.channel.send(sa, {
+                allowedMentions: {
+                  parse: []
+                }
+              });
             }
             else if(!sa) {
             return message.reply("What do you want me to say? 🤷‍♀️");

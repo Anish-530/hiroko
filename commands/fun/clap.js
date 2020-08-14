@@ -11,6 +11,10 @@ module.exports={
         if(!aa) return message.channel.send("Give me something to clap between them!")
         const bb = aa.split('👏').join('👏');
         const cc = '👏' + bb + '👏';
-        message.channel.send(cc);
+        message.channel.send(cc, {
+            allowedMentions: {
+              parse: []
+            }
+          });
     }
 }

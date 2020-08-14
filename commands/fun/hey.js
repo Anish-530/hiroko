@@ -24,6 +24,10 @@ module.exports={
             "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         ]
         let Response = responses[Math.floor(Math.random() * (responses.length))];
-        message.reply(Response);
+        message.reply(Response, {
+            allowedMentions: {
+              parse: []
+            }
+          });
     }
 }

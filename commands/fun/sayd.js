@@ -9,7 +9,11 @@ module.exports={
     run: async(bot, message, args)=>{
         const sad = args.slice(0).join(' ');
         if(sad) {
-        message.channel.send(sad);
+        message.channel.send(sad, {
+            allowedMentions: {
+              parse: []
+            }
+          });
         if(message.author.id === message.author.id){
             message.delete()
         }
