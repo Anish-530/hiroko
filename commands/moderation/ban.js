@@ -10,6 +10,14 @@ module.exports={
         if (!message.member.hasPermission(['BAN_MEMBERS'])) return message.reply('Sorry! Your roles are too low to ban someone :(').then(message => message.delete({ timeout: 5000 }));
         if(!message.member.guild.me.hasPermission(['BAN_MEMBERS'])) return message.channel.send("I don\'t have the permission to \`BAN MEMBERS\`.\nPlease provide me the following permission to use this command")  
         const userb = message.mentions.users.first();
+        if(userb.id === message.author.id) {
+            message.channel.send(`Hey ${message.author.username}, You know you can\'t ban yourself right?`, {
+                allowedMentions: {
+                  parse: []
+                }
+              });
+            message.react('👎');
+        }
         if (!userb) return message.reply('You need to mention the user, whom you want to **ban**.\nEx: \`hey ban @the-user-you-want-to-ban\`').then(message => message.delete({ timeout: 6000 }));
         if(userb.id === message.author.id) return message.reply('Uh! You can\'t ban yourself, you know? :/')
         else if (userb) {
