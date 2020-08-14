@@ -8,8 +8,12 @@ module.exports={
     usage: 'hey sayd <your Text>',
     run: async(bot, message, args)=>{
         const sad = args.slice(0).join(' ');
-        if(sad) {
-        message.channel.send(sad);
+        if(sad === message.mentions.members.first)
+        {
+            const v = sad.toString();
+        }
+        if(v) {
+        message.channel.send(v);
         if(message.author.id === message.author.id){
             message.delete()
         }
