@@ -7,6 +7,7 @@ module.exports={
     aliases: [],
     usage: 'hey sayd <your Text>',
     run: async(bot, message, args)=>{
+      if(!message.member.guild.me.hasPermission(['MANAGE_MESSAGES'])) return message.channel.send("I don\'t have the permission to \`MANAGE MESSAGES\`.\nPlease provide me the following permission to use this command")
         const sad = args.slice(0).join(' ');
         if(sad) {
         message.channel.send(sad, {
