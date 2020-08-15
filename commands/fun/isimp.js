@@ -15,7 +15,7 @@ module.exports={
         if (mentioneddMember) {
             embb.setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
             embb.setThumbnail(mentioneddMember.user.displayAvatarURL({ dynamic: true, format: 'png' }))
-            embb.setColor(0xffa500)
+            embb.setColor(0x2f3136)
             embb.setDescription(`
 **simps for** ${mentioneddMember.user.username}`)
         }

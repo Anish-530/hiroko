@@ -118,7 +118,7 @@ module.exports={
         let Responsegg = responses3[Math.floor(Math.random() * (responses3.length) - 1)];
         em4.setTitle(memberr2.username + "\'s rate of simpness 👌")
         em4.setDescription("You are **" + Responsegg + "**% simp 🏳️‍")
-        em4.setColor(0xa958a5)
+        em4.setColor(0x2f3136)
         em4.setThumbnail(memberr2.displayAvatarURL({ dynamic: true, format: 'png' }))
         if (Responsegg === "100") {
             em4.setFooter("👀 You simp so much! Woah")

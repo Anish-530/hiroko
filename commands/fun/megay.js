@@ -118,7 +118,7 @@ module.exports={
         let Responseg = responses2[Math.floor(Math.random() * (responses2.length) - 1)];
         em2.setTitle(memberr1.username + "\'s rate of gayness 👌")
         em2.setDescription("You are **" + Responseg + "**% gay 🏳️‍🌈")
-        em2.setColor(0xdaa520)
+        em2.setColor(0x2f3136)
         em2.setThumbnail(memberr1.displayAvatarURL({ dynamic: true, format: 'png' }))
         if (Responseg === "100") {
             em2.setFooter("👀 Hmm...A man of gay I see")

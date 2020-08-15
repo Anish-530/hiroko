@@ -118,7 +118,7 @@ module.exports={
         let Responsegc = responsesr[Math.floor(Math.random() * (responsesr.length))];
         em2c.setTitle(memberrc.username + "\'s rate of epicness 🤩")
         em2c.setDescription("You are **" + Responsegc + "**% Epic 💥")
-        em2c.setColor(0xdaa520)
+        em2c.setColor(0x2f3136)
         em2c.setThumbnail(memberrc.displayAvatarURL({ dynamic: true, format: 'png' }))
         if (Responsegc === "100") {
             em2c.setFooter("👀 Epicness overloaded!!!!!!!!!!!!!!!!!")
