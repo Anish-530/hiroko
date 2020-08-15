@@ -26,9 +26,9 @@ module.exports={
             }
         })
         let emn = new Discord.MessageEmbed()
-        emn.setTitle(`Emojis in ${message.guild.name}`)
+        emn.setTitle(`Emojis of [ ${message.guild.name} ] server`)
         emn.setThumbnail(message.guild.iconURL({ dynamic: true, format: 'png', size: 512 }))
-        emn.setDescription(`**Animated [${Animated}]**:\n${EmojisAnimated}\n\n**Standard [${EmojiCount}]**:\n${Emojis}\n\n**Overall Emojis [${OverallEmojis}]:\n${EmojisAnimated}${Emojis}**`)
+        emn.setDescription(`**Animated [${Animated}]**:\n${EmojisAnimated}\n\n**Standard [${EmojiCount}]**:\n${Emojis}`)
         emn.setColor(0x2f3136)
         message.channel.send(emn);
     }
