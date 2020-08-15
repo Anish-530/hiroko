@@ -7,6 +7,7 @@ module.exports={
     aliases: ['emojilist'],
     usage: 'hey emojis',
     run: async(bot, message, args)=>{
+        try{
         let Emojis = "";
         let EmojisAnimated = "";
         let EmojiCount = 0;
@@ -31,5 +32,8 @@ module.exports={
         emn.setDescription(`**Animated [${Animated}]**:\n${EmojisAnimated}\n\n**Standard [${EmojiCount}]**:\n${Emojis}`)
         emn.setColor(0x2f3136)
         message.channel.send(emn);
+        }catch(err){
+            if(err) return message.channel.send(`The Error occuring currently is : ${err.message}`)
+        }
     }
 }
