@@ -19,10 +19,6 @@ module.exports={
             embb.setDescription(`
 **simps for** ${mentioneddMember.user.username}`)
         }
-        message.channel.send(embb, {
-            allowedMentions: {
-              parse: []
-            }
-          });
+        message.channel.send(embb);
     }
 }
