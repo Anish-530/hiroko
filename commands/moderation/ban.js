@@ -23,8 +23,8 @@ module.exports={
             if (memberb) {
                 memberb.ban(reason).then(() => {
                     let uban = new Discord.MessageEmbed()
-                    uban.setAuthor("Ban command used by " + message.author.id, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
-                    uban.setDescription(`**${userb.tag}** was successfully banned from **${message.guild.name}** 🤕.\nReason for banning **${userb.tag}** : ${reason}`)
+                    uban.setAuthor("Ban command used by " + message.author.tag, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
+                    uban.setDescription(`**${userb.tag}** was successfully banned from **${message.guild.name}** 🤕.\nReason for banning **${userb.tag}** : ${reason}\nUser ID of **${userb.tag}** --> [ _${userb.id}_ ]`)
                     uban.setColor(0xf94343)
                     uban.setTimestamp(new Date())
                     uban.setFooter("Hiroko", bot.user.avatarURL())
