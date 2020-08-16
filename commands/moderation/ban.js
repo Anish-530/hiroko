@@ -16,9 +16,6 @@ module.exports={
               parse: []
             }
           });
-        /*if (message.mentions.members.first() !== undefined) {
-            if (message.mentions.members.first().id === bot.user.id) return message.channel.send("Why do you want to ban me 😶?") 
-        }*/
         else if (userb) {
             const memberb = message.guild.member(userb);
             let reason = args.slice(1).join(" ")
@@ -26,7 +23,7 @@ module.exports={
             if (memberb) {
                 memberb.ban(reason).then(() => {
                     let uban = new Discord.MessageEmbed()
-                    uban.setAuthor("Ban command used by " + message.author.username, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
+                    uban.setAuthor("Ban command used by " + message.author.id, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
                     uban.setDescription(`**${userb.tag}** was successfully banned from **${message.guild.name}** 🤕.\nReason for banning **${userb.tag}** : ${reason}`)
                     uban.setColor(0xf94343)
                     uban.setTimestamp(new Date())
