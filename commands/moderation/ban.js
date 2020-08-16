@@ -16,9 +16,9 @@ module.exports={
               parse: []
             }
           });
-        if (message.mentions.members.first() !== undefined) {
+        /*if (message.mentions.members.first() !== undefined) {
             if (message.mentions.members.first().id === bot.user.id) return message.channel.send("Why do you want to ban me 😶?") 
-        }
+        }*/
         else if (userb) {
             const memberb = message.guild.member(userb);
             let reason = args.slice(1).join(" ")
