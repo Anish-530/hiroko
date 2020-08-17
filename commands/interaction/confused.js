@@ -31,7 +31,7 @@ module.exports={
                 var gif1 = mediax1.gif
                 let ki = new Discord.MessageEmbed()
                 ki.setColor(0x2f3136)
-                ki.setDescription(`Looks like **${message.author}** is confused 😕`)
+                ki.setDescription(`Looks like **${message.author.username}** is confused 😕`)
                 ki.setImage(gif1.url)
                 ki.setTimestamp(new Date())
                 ki.setFooter("Hiroko", bot.user.avatarURL())
