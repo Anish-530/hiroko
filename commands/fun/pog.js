@@ -7,8 +7,8 @@ module.exports={
     aliases: [],
     usage: 'hey pog',
     run: async(bot, message, args)=>{
-        message.react('🇵');
-        message.react('🇴');
-        message.react('🇬');
+        await message.react('🇵');
+        await message.react('🇴');
+        await message.react('🇬');
     }
 }
