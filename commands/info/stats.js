@@ -70,7 +70,7 @@ module.exports = {
                     inline: true
                 }
             )
-            .setFooter(`Requested By ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
+            .setFooter(`Requested By ${message.guild.members.cache.get(member.id).displayName}`, message.author.displayAvatarURL({ dynamic: true }))
 
         await message.channel.send(embed)
     }

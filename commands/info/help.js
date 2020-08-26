@@ -149,7 +149,7 @@ module.exports={
                     fields: [
                         {
                             name: '🤖 | INFO',
-                            value: `\`hey botinvite\`\n\`hey dmhelp\`\n\`hey help\`\n\`hey info\`\n\`hey ping\`\n\`hey stats\`\n\`hey supportserver\`\n\`hey time\`\n\`hey uptime\`\n\`hey userinfo\`\n`
+                            value: `\`hey botinvite\`\n\`hey dmhelp\`\n\`hey help\`\n\`hey info\`\n\`hey ping\`\n\`hey stats\`\n\`hey supportserver\`\n\`hey time\`\n\`hey uptime\`\n\`hey urban\`\n\`hey userinfo\`\n`
                         }
                     ]
                 }

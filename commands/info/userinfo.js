@@ -38,6 +38,7 @@ module.exports={
             embed.addField('User', [
                 `**❯ Username:** ${member.user.username}`,
                 `**❯ Tag:** #${member.user.discriminator}`,
+                `**❯ Nickname:** ${message.guild.members.cache.get(member.id).displayName}`,
                 `**❯ ID:** ${member.id}`,
                 `**❯ Flags:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
                 `**❯ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
@@ -51,6 +52,7 @@ module.exports={
             embed.addField('User', [
                 `**❯ Username:** ${member.user.username}`,
                 `**❯ Tag:** #${member.user.discriminator}`,
+                `**❯ Nickname:** ${message.guild.members.cache.get(member.id).displayName}`,
                 `**❯ ID:** ${member.id}`,
                 `**❯ Flags:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
                 `**❯ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
@@ -64,6 +66,7 @@ module.exports={
             embed.addField('User', [
                 `**❯ Username:** ${member.user.username}`,
                 `**❯ Tag:** #${member.user.discriminator}`,
+                `**❯ Nickname:** ${message.guild.members.cache.get(member.id).displayName}`,
                 `**❯ ID:** ${member.id}`,
                 `**❯ Flags:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
                 `**❯ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
@@ -77,6 +80,7 @@ module.exports={
             embed.addField('User', [
                 `**❯ Username:** ${member.user.username}`,
                 `**❯ Tag:** #${member.user.discriminator}`,
+                `**❯ Nickname:** ${message.guild.members.cache.get(member.id).displayName}`,
                 `**❯ ID:** ${member.id}`,
                 `**❯ Flags:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
                 `**❯ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
