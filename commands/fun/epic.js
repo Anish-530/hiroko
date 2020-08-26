@@ -116,7 +116,7 @@ module.exports={
         ]
         if (mentioneddMemberrc === message.guild.me) return message.channel.send("A perfect 100% for me tho 😂")
         let Responsegc = responsesr[Math.floor(Math.random() * (responsesr.length))];
-        em2c.setTitle(memberrc.username + "\'s rate of epicness 🤩")
+        em2c.setTitle(message.guild.members.cache.get(memberrc.id).displayName + "\'s rate of epicness 🤩")
         em2c.setDescription("You are **" + Responsegc + "**% Epic 💥")
         em2c.setColor(0x2f3136)
         em2c.setThumbnail(memberrc.displayAvatarURL({ dynamic: true, format: 'png' }))

@@ -9,7 +9,7 @@ module.exports={
     run: async(bot, message, args)=>{
         if (!message.member.hasPermission(['BAN_MEMBERS'])) return message.reply('Sorry! Your roles are too low to ban someone :(').then(message => message.delete({ timeout: 5000 }));
         if(!message.member.guild.me.hasPermission(['BAN_MEMBERS'])) return message.channel.send("I don\'t have the permission to \`BAN MEMBERS\`.\nPlease provide me the following permission to use this command")  
-        const userb = message.mentions.users.first();
+        const userb = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
         if (!userb) return message.reply('You need to mention the user, whom you want to **ban**.\nEx: \`hey ban @the-user-you-want-to-ban\`').then(message => message.delete({ timeout: 6000 }));
         if(userb.id === message.author.id) return message.reply('Uh! You can\'t ban yourself, you know? :/', {
             allowedMentions: {
@@ -23,8 +23,8 @@ module.exports={
             if (memberb) {
                 memberb.ban(reason).then(() => {
                     let uban = new Discord.MessageEmbed()
-                    uban.setAuthor("Ban command used by " + message.author.tag, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
-                    uban.setDescription(`**${userb.tag}** was successfully banned from **${message.guild.name}** 🤕.\nReason for banning **${userb.tag}** : ${reason}\nUser ID of **${userb.tag}** --> [ _${userb.id}_ ]`)
+                    uban.setAuthor("Ban command used by " + message.guild.members.cache.get(message.author.id).displayName, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
+                    uban.setDescription(`**${message.guild.members.cache.get(userb.id).displayName}** was successfully banned from **${message.guild.name}** 🤕.\nReason for banning **${message.guild.members.cache.get(userb.id).displayName}** : ${reason}\nUser ID of **${message.guild.members.cache.get(userb.id).displayName}** --> [ _${userb.id}_ ]`)
                     uban.setColor(0xf94343)
                     uban.setTimestamp(new Date())
                     uban.setFooter("Hiroko", bot.user.avatarURL())

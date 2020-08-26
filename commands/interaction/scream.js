@@ -28,7 +28,7 @@ module.exports={
                     var gifr = mediaxr.gif
             
                     sc.setColor(0x2f3136)
-                    sc.setDescription(`**${message.author.username}** screams at **${mentionedddMembere222.username}** 😱`)
+                    sc.setDescription(`**${message.guild.members.cache.get(message.author.id).displayName}** screams at **${message.guild.members.cache.get(mentionedddMembere222.id).displayName}** 😱`)
                     sc.setImage(gifr.url)
                     sc.setTimestamp(new Date())
                     sc.setFooter("Hiroko", bot.user.avatarURL())
@@ -45,7 +45,7 @@ module.exports={
               
                 
                     sc.setColor(0x2f3136)
-                    sc.setDescription(`**${message.author.username}** screams 😱`)
+                    sc.setDescription(`**${message.guild.members.cache.get(message.author.id).displayName}** screams 😱`)
                     sc.setImage(gifr.url)
                     sc.setTimestamp(new Date())
                     sc.setFooter("Hiroko", bot.user.avatarURL())

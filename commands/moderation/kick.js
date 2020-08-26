@@ -11,8 +11,8 @@ module.exports={
         if(!message.member.guild.me.hasPermission(['KICK_MEMBERS'])) return message.channel.send("I don\'t have the permission to \`KICK MEMBERS\`.\nPlease provide me the following permission to use this command")
         if (!args[0]) return message.reply('You need to Mention whom you want to kick :) . Ex: hey kick @someone').then(message => message.delete({ timeout: 3000 }));
 
-        const user = message.mentions.users.first();
-        if(user.id === message.author.id) return message.reply('Uh! You can\'t kick yourself, you know? :/', {
+        const userf = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
+        if(userf.id === message.author.id) return message.reply('Uh! You can\'t kick yourself, you know? :/', {
             allowedMentions: {
               parse: []
             }
@@ -20,15 +20,15 @@ module.exports={
         if (message.mentions.members.first() !== undefined) {
             if (message.mentions.members.first().id === bot.user.id) return message.channel.send("Why do you want to kick me 😶?") 
         }
-        if (user) {
-            const member = message.guild.member(user);
+        if (userf) {
+            const member = message.guild.member(userf);
             let reon = args.slice(1).join(" ")
             if(!reon) reon = "No reason was provided"
             if (member) {
                 member.kick(reon).then(() => {
                     const kickem = new Discord.MessageEmbed()
-                    kickem.setAuthor("Kick command used by " + message.author.username, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
-                    kickem.setDescription(`**${user.tag}** was successfully kicked from **${message.guild.name}** 😶.\nReason for kick : **${reon}**`)
+                    kickem.setAuthor("Kick command used by " + message.guild.members.cache.get(message.author.id).displayName, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
+                    kickem.setDescription(`**${message.guild.members.cache.get(userf.id).displayName}** was successfully kicked from **${message.guild.name}** 😶.\nReason for kick : **${reon}**`)
                     kickem.setColor(0xf94343)
                     kickem.setTimestamp(new Date())
                     kickem.setFooter("Hiroko", bot.user.avatarURL())

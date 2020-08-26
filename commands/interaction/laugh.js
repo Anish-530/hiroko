@@ -26,9 +26,8 @@ module.exports={
                 Resultsr.forEach(Postr => {
                     var mediaxr = Postr.media[0];
                     var gifr = mediaxr.gif
-            
                     sc.setColor(0x2f3136)
-                    sc.setDescription(`**${message.author.username}** laughs at **${mentionedddMembere222.username}** 😂`)
+                    sc.setDescription(`**${message.guild.members.cache.get(message.author.id).displayName}** laughs at **${message.guild.members.cache.get(mentionedddMembere222.id).displayName}** 😂`)
                     sc.setImage(gifr.url)
                     sc.setTimestamp(new Date())
                     sc.setFooter("Hiroko", bot.user.avatarURL())

@@ -15,7 +15,7 @@ module.exports={
         message.guild.channels.create(`${vb}`).then(channel => {
             let cha = new Discord.MessageEmbed()
             cha.setTitle("Create Channel :")
-            cha.setDescription(`The channel ***#${dedle}*** was successfully created by **${message.author.username}**`)
+            cha.setDescription(`The channel ***#${dedle}*** was successfully created by **${message.guild.members.cache.get(message.author.id).displayName}**`)
             cha.setColor(0x33a1ee)
             cha.setTimestamp(new Date())
             cha.setFooter("Hiroko", bot.user.displayAvatarURL())

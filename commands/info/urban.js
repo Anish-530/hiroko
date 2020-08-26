@@ -9,24 +9,20 @@ module.exports={
     usage: 'hey urban <word>',
     run: async(bot, message, args)=>{
         var definition = args.slice(0).join(' ');
+        if(!definition) return message.channel.send("Give a word to search for atleast :/")
+        const screammm = await message.channel.send("<a:plexiOffline:733764404587397150>")
         ud.term(definition, (error, entries, tags, sounds) => {
             if (error) {
-              console.error(error.message)
+              return screammm.edit(`Sorry, Looks like I was unable to find the meaning of the word **${definition}**`)
             } else {
-              console.log(entries[0].word)
-              console.log(entries[0].definition)
-              console.log(entries[0].example)
+              let ur = new Discord.MessageEmbed()
+              .setDescription(`**WORD : **${entries[0].word}\n\n**DEFINATION : **\n${entries[0].definition}\n\n**EXAMPLE : **\n${entries[0].example}\n\n**VOTINGS : ** 👍 = ${entries[0].thumbs_up}  •  👎 = ${entries[0].thumbs_down}`)
+              .setColor(0x2f3136)
+              .setTitle('Urban Dictionary')
+              .setTimestamp(new Date())
+              .setFooter(`Requested By ${message.guild.members.cache.get(message.author.id).displayName}`, message.author.displayAvatarURL({ dynamic: true }))
+              screammm.edit('\t', ur)
             }
-          })
-           
-          // Promise example.
-          ud.term(definition).then((result) => {
-            const entries = result.entries
-            console.log(entries[0].word)
-            console.log(entries[0].definition)
-            console.log(entries[0].example)
-          }).catch((error) => {
-                return message.channel.send(`Sorry, Looks like there\'s an error stopping me. Error: ${error.message}`)
           })
     }
 }

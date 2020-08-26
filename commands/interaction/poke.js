@@ -36,7 +36,7 @@ module.exports={
                     let nscbaq = new Discord.MessageEmbed()
                 
                     nscbaq.setColor(0x2f3136)
-                    nscbaq.setDescription(`**${message.author.username}** poked themselves 👈`)
+                    nscbaq.setDescription(`**${message.guild.members.cache.get(message.author.id).displayName}** poked themselves 👈`)
                     nscbaq.setImage(gifrbsq.url)
                     nscbaq.setTimestamp(new Date())
                     nscbaq.setFooter("Hiroko", bot.user.avatarURL())
@@ -53,7 +53,7 @@ module.exports={
                     console.log(gifrbaq)
             
                     scbaq.setColor(0x2f3136)
-                    scbaq.setDescription(`**${message.author.username}** pokes **${mentionedddMembere222baq.username}** 👉`)
+                    scbaq.setDescription(`**${message.guild.members.cache.get(message.author.id).displayName}** pokes **${message.guild.members.cache.get(mentionedddMembere222baq.id).displayName}** 👉`)
                     scbaq.setImage(gifrbaq.url)
                     scbaq.setTimestamp(new Date())
                     scbaq.setFooter("Hiroko", bot.user.avatarURL())
@@ -71,7 +71,7 @@ module.exports={
                     let nscbaq = new Discord.MessageEmbed()
               
                     nscbaq.setColor(0x2f3136)
-                    nscbaq.setDescription(`**${message.author.username}** poked themselves 👈`)
+                    nscbaq.setDescription(`**${message.guild.members.cache.get(message.author.id).displayName}** poked themselves 👈`)
                     nscbaq.setImage(gifrbsq.url)
                     nscbaq.setTimestamp(new Date())
                     nscbaq.setFooter("Hiroko", bot.user.avatarURL())

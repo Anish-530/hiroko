@@ -13,11 +13,11 @@ module.exports={
         if (mentioneddMember === message.guild.me) return message.reply("You sure you simp for me? ummmm.....Alright then...")
         if (mentioneddMember.id === message.author.id) return message.reply("Who the hell simps for themselves?")
         if (mentioneddMember) {
-            embb.setAuthor(`${message.author.username}`, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
+            embb.setAuthor(`${message.guild.members.cache.get(message.author.id).displayName}`, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
             embb.setThumbnail(mentioneddMember.user.displayAvatarURL({ dynamic: true, format: 'png' }))
             embb.setColor(0x2f3136)
             embb.setDescription(`
-**simps for** ${mentioneddMember.user.username}`)
+simps for **${message.guild.members.cache.get(mentioneddMember.id).displayName}**`)
         }
         message.channel.send(embb);
     }

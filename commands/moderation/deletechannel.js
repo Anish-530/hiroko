@@ -14,7 +14,7 @@ module.exports={
         fetchedChannel.delete();
             let cha1 = new Discord.MessageEmbed()
             cha1.setTitle("Delete Channel :")
-            cha1.setDescription(`The channel ***#${args.join('-')}*** was successfully deleted by **${message.author.username}**`)
+            cha1.setDescription(`The channel ***#${args.join('-')}*** was successfully deleted by **${message.guild.members.cache.get(message.author.id).displayName}**`)
             cha1.setColor(0x33a1ee)
             cha1.setTimestamp(new Date())
             cha1.setFooter("Hiroko", bot.user.displayAvatarURL())

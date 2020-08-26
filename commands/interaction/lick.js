@@ -36,7 +36,7 @@ module.exports={
                     let nscba = new Discord.MessageEmbed()
                 
                     nscba.setColor(0x2f3136)
-                    nscba.setDescription(`**${message.author.username}** lick themselves 🥺`)
+                    nscba.setDescription(`**${message.guild.members.cache.get(message.author.id).displayName}** lick themselves 🥺`)
                     nscba.setImage(gifrbs.url)
                     nscba.setTimestamp(new Date())
                     nscba.setFooter("Hiroko", bot.user.avatarURL())
@@ -53,7 +53,7 @@ module.exports={
                     console.log(gifrba)
                     
                     scba.setColor(0x2f3136)
-                    scba.setDescription(`**${message.author.username}** licks **${mentionedddMembere222ba.username}** 🤩`)
+                    scba.setDescription(`**${message.guild.members.cache.get(message.author.id).displayName}** licks **${message.guild.members.cache.get(mentionedddMembere222ba.id).displayName}** 🤩`)
                     scba.setImage(gifrba.url)
                     scba.setTimestamp(new Date())
                     scba.setFooter("Hiroko", bot.user.avatarURL())
@@ -71,7 +71,7 @@ module.exports={
                     let nscba = new Discord.MessageEmbed()
               
                     nscba.setColor(0x2f3136)
-                    nscba.setDescription(`**${message.author.username}** lick themselves 🥺`)
+                    nscba.setDescription(`**${message.guild.members.cache.get(message.author.id).displayName}** lick themselves 🥺`)
                     nscba.setImage(gifrbs.url)
                     nscba.setTimestamp(new Date())
                     nscba.setFooter("Hiroko", bot.user.avatarURL())

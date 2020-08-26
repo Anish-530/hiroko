@@ -12,8 +12,8 @@ module.exports={
         let em = new MessageEmbed()
         em.setImage(memberr.displayAvatarURL({ dynamic: true, format: 'png', size: 512 }))
         em.setColor(0x2f3136)
-        em.addField(memberr.username + '\'s Avatar', [
-            `**❯** [Link to ${memberr.username}'s avatar](${memberr.displayAvatarURL({ dynamic: true })})`
+        em.addField(message.guild.members.cache.get(memberr.id).displayName + '\'s Avatar', [
+            `**❯** [Link to ${message.guild.members.cache.get(memberr.id).displayName}'s avatar](${memberr.displayAvatarURL({ dynamic: true })})`
         ])
         em.setFooter(`Oh! Btw Nice pfp! ngl 😏`)
         message.channel.send(em);

@@ -35,7 +35,7 @@ module.exports={
                     let scbb = new Discord.MessageEmbed()
                     
                     scbb.setColor(0x2f3136)
-                    scbb.setDescription(`**${message.author.username}** shoot themselves`)
+                    scbb.setDescription(`**${message.guild.members.cache.get(message.author.id).displayName}** shot themselves`)
                     scbb.setImage(gifrbb.url)
                     scbb.setTimestamp(new Date())
                     scbb.setFooter("Hiroko", bot.user.avatarURL())
@@ -53,7 +53,7 @@ module.exports={
                     let scbb = new Discord.MessageEmbed()
                  
                     scbb.setColor(0x2f3136)
-                    scbb.setDescription(`**${message.author.username}** shoots **${mentionedddMembere222bbb.username}** x_x`)
+                    scbb.setDescription(`**${message.guild.members.cache.get(message.author.id).displayName}** shoots **${message.guild.members.cache.get(mentionedddMembere222bbb.id).displayName}** x_x`)
                     scbb.setImage(gifrbb.url)
                     scbb.setTimestamp(new Date())
                     scbb.setFooter("Hiroko", bot.user.avatarURL())
@@ -71,7 +71,7 @@ module.exports={
                     let scbb = new Discord.MessageEmbed()
                     
                     scbb.setColor(0x2f3136)
-                    scbb.setDescription(`**${message.author.username}** shoot themselves`)
+                    scbb.setDescription(`**${message.guild.members.cache.get(message.author.id).displayName}** shot themselves`)
                     scbb.setImage(gifrbb.url)
                     scbb.setTimestamp(new Date())
                     scbb.setFooter("Hiroko", bot.user.avatarURL())

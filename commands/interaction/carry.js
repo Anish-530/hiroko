@@ -30,7 +30,7 @@ module.exports={
             let msadx = sadx[Math.floor(Math.random() * sadx.length)]
             let sembedx = new Discord.MessageEmbed()
             sembedx.setImage(msadx)
-            sembedx.setTitle("I really feel sad to see you alone **" + `${message.author.username}` + "**!😭")
+            sembedx.setTitle("I really feel sad to see you alone **" + `${message.guild.members.cache.get(message.author.id).displayName}` + "**!😭")
             sembedx.setColor(0x2f3136)
             sembedx.setTimestamp(new Date())
             sembedx.setFooter("Hiroko", bot.user.avatarURL())
@@ -46,7 +46,7 @@ module.exports={
                     let ehx = new Discord.MessageEmbed()
                     
                     ehx.setColor(0x2f3136)
-                    ehx.setDescription(`Well, **${message.author.username}** picks you up **${memberrtx.username}** 😊`)
+                    ehx.setDescription(`Well, **${message.guild.members.cache.get(message.author.id).displayName}** picks you up **${message.guild.members.cache.get(memberrtx.id).displayName}** 😊`)
                     ehx.setImage(gifx.url)
                     ehx.setTimestamp(new Date())
                     ehx.setFooter("Hiroko", bot.user.avatarURL())

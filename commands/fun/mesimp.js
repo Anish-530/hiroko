@@ -116,7 +116,7 @@ module.exports={
         ]
         if (mentioneddMemberr1 === message.guild.me) return message.channel.send("Unfortunately, I don\'t simp for anyone 🤷‍♀️")
         let Responsegg = responses3[Math.floor(Math.random() * (responses3.length) - 1)];
-        em4.setTitle(memberr2.username + "\'s rate of simpness 👌")
+        em4.setTitle(message.guild.members.cache.get(memberr2.id).displayName + "\'s rate of simpness 👌")
         em4.setDescription("You are **" + Responsegg + "**% simp 🏳️‍")
         em4.setColor(0x2f3136)
         em4.setThumbnail(memberr2.displayAvatarURL({ dynamic: true, format: 'png' }))

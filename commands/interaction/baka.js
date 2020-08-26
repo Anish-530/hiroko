@@ -36,7 +36,7 @@ module.exports={
                 let ki113 = new Discord.MessageEmbed()
                 
                 ki113.setColor(0x2f3136)
-                ki113.setDescription(`**${message.author.username}** calls **${mentionedddMember1113.username}** a baka 👀`)
+                ki113.setDescription(`**${message.guild.members.cache.get(message.author.id).displayName}** calls **${message.guild.members.cache.get(mentionedddMember1113.author.id).displayName}** a baka 👀`)
                 ki113.setImage(gif1113.url)
                 ki113.setTimestamp(new Date())
                 ki113.setFooter("Hiroko", bot.user.avatarURL())

@@ -35,7 +35,7 @@ module.exports={
                     console.log(gifrb)
                     
                     scb.setColor(0x2f3136)
-                    scb.setDescription(`**${message.author.username}** cries 😭`)
+                    scb.setDescription(`**${message.guild.members.cache.get(message.author.id).displayName}** cries 😭`)
                     scb.setImage(gifrb.url)
                     scb.setTimestamp(new Date())
                     scb.setFooter("Hiroko", bot.user.avatarURL())
@@ -52,7 +52,7 @@ module.exports={
                     console.log(gifrb)
                     
                     scb.setColor(0x2f3136)
-                    scb.setDescription(`**${message.author.username}** cries for **${mentionedddMembere222b.username}** 😭`)
+                    scb.setDescription(`**${message.guild.members.cache.get(message.author.id).displayName}** cries for **${message.guild.members.cache.get(mentionedddMembere222b.id).displayName}** 😭`)
                     scb.setImage(gifrb.url)
                     scb.setTimestamp(new Date())
                     scb.setFooter("Hiroko", bot.user.avatarURL())
@@ -69,7 +69,7 @@ module.exports={
                     console.log(gifrb)
                     
                     scb.setColor(0x2f3136)
-                    scb.setDescription(`**${message.author.username}** cries 😭`)
+                    scb.setDescription(`**${message.guild.members.cache.get(message.author.id).displayName}** cries 😭`)
                     scb.setImage(gifrb.url)
                     scb.setTimestamp(new Date())
                     scb.setFooter("Hiroko", bot.user.avatarURL())

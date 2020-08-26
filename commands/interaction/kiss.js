@@ -33,7 +33,7 @@ module.exports={
                 var gif1 = mediax1.gif
                 let ki = new Discord.MessageEmbed()
                 ki.setColor(0x2f3136)
-                ki.setDescription(`Ahh! **${message.author.username}** kisses you **${mentionedddMember11.username}** 😊`)
+                ki.setDescription(`Ahh! **${message.guild.members.cache.get(message.author.id).displayName}** kisses you **${message.guild.members.cache.get(mentionedddMember11.id).displayName}** 😊`)
                 ki.setImage(gif1.url)
                 ki.setTimestamp(new Date())
                 ki.setFooter("Hiroko", bot.user.avatarURL())

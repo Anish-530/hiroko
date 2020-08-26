@@ -33,7 +33,7 @@ module.exports={
                 let kik = new Discord.MessageEmbed()
             
                 kik.setColor(0x2f3136)
-                kik.setDescription(`**${message.author.username}** pouts 🤫`)
+                kik.setDescription(`**${message.guild.members.cache.get(message.author.id).displayName}** pouts 🤫`)
                 kik.setImage(gif1q.url)
                 kik.setTimestamp(new Date())
                 kik.setFooter("Hiroko", bot.user.avatarURL())

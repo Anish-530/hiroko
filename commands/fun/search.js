@@ -30,7 +30,7 @@ module.exports={
                 console.log(gif1q)
                 let kiq = new Discord.MessageEmbed()
                 kiq.setColor(0x2f3136)
-                kiq.setDescription(`**${message.author.username}** Here is your **${arv}** gif!`)
+                kiq.setDescription(`**${message.guild.members.cache.get(message.author.id).displayName}** Here is your **${arv}** gif!`)
                 kiq.setImage(gif1q.url)
                 kiq.setTimestamp(new Date())
                 kiq.setFooter("Hiroko", bot.user.avatarURL())

@@ -30,7 +30,7 @@ module.exports={
             let msad = sad[Math.floor(Math.random() * sad.length)]
             let sembed = new Discord.MessageEmbed()
             sembed.setImage(msad)
-            sembed.setTitle("I really feel sad to see you alone **" + `${message.author.username}` + "**!😭")
+            sembed.setTitle("I really feel sad to see you alone **" + `${message.guild.members.cache.get(message.author.id).displayName}` + "**!😭")
             sembed.setColor(0x2f3136)
             sembed.setTimestamp(new Date())
             sembed.setFooter("Hiroko", bot.user.avatarURL())
@@ -43,7 +43,7 @@ module.exports={
                     var gif = mediax.gif
                     let eh = new Discord.MessageEmbed()
                     eh.setColor(0x2f3136)
-                    eh.setDescription(`Guess what? **${message.author.username}** hugs you **${memberrt.username}** 😊`)
+                    eh.setDescription(`Guess what? **${message.guild.members.cache.get(message.author.id).displayName}** hugs you **${message.guild.members.cache.get(memberrt.id).displayName}** 😊`)
                     eh.setImage(gif.url)
                     eh.setTimestamp(new Date())
                     eh.setFooter("Hiroko", bot.user.avatarURL())
