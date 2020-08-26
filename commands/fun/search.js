@@ -21,6 +21,7 @@ module.exports={
               parse: []
             }
           });
+        try{
         Tenor.Search.Random(arv, "1").then(Results1q => {
             Results1q.forEach(Post1q => {
                 var mediax1q = Post1q.media[0];
@@ -35,6 +36,9 @@ module.exports={
                 kiq.setFooter("Hiroko", bot.user.avatarURL())
                 return searchh.edit("\t", kiq)
             });
-        }).catch(console.error)
+        })
+    }catch(err){
+        if(err) return message.channel.send(`Hey ${message.author}, I was unable to find any gifs of ${arv}, Sorry :()`)
+    }
     }
 }
