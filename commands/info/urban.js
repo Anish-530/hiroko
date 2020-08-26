@@ -26,7 +26,7 @@ module.exports={
             console.log(entries[0].definition)
             console.log(entries[0].example)
           }).catch((error) => {
-                return message.channel.send(`Sorry, Looks like there\'s are error stopping me. Error: ${error.message}`)
+                return message.channel.send(`Sorry, Looks like there\'s an error stopping me. Error: ${error.message}`)
           })
     }
 }
