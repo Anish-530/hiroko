@@ -24,7 +24,7 @@ module.exports={
                 memberb.ban(reason).then(() => {
                     let uban = new Discord.MessageEmbed()
                     uban.setAuthor("Ban command used by " + message.guild.members.cache.get(message.author.id).displayName, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
-                    uban.setDescription(`**${message.guild.members.cache.get(userb.id).displayName}** was successfully banned from **${message.guild.name}** 🤕.\nReason for banning **${message.guild.members.cache.get(userb.id).displayName}** : ${reason}\nUser ID of **${message.guild.members.cache.get(userb.id).displayName}** --> [ _${userb.id}_ ]`)
+                    uban.setDescription(`**${userb.tag}** was successfully banned from **${message.guild.name}** 🤕.\nReason for banning **${userb.tag}** : ${reason}\nUser ID of **${userb.tag}** --> [ _${userb.id}_ ]`)
                     uban.setColor(0xf94343)
                     uban.setTimestamp(new Date())
                     uban.setFooter("Hiroko", bot.user.avatarURL())
