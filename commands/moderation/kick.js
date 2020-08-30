@@ -33,10 +33,10 @@ module.exports={
                     kickem.setTimestamp(new Date())
                     kickem.setFooter("Hiroko", bot.user.avatarURL())
                     message.channel.send(kickem);
-                    await message.react('👍');
+                    message.react('👍');
                 }).catch(err => {
                     message.channel.send(`Error : ${err.message}`)
-                    await message.react('👎');
+                    message.react('👎');
                     console.log(err);
                 });
 
