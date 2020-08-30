@@ -28,14 +28,14 @@ module.exports={
                 member.kick(reon).then(() => {
                     const kickem = new Discord.MessageEmbed()
                     kickem.setAuthor("Kick command used by " + message.guild.members.cache.get(message.author.id).displayName, message.author.displayAvatarURL({ dynamic: true, format: 'png' }))
-                    kickem.setDescription(`**${message.guild.members.cache.get(userf.id).displayName}** was successfully kicked from **${message.guild.name}** 😶.\nReason for kick : **${reon}**`)
+                    kickem.setDescription(`**${userf.tag}** was successfully kicked from **${message.guild.name}** 😶.\nReason for kick : **${reon}**`)
                     kickem.setColor(0xf94343)
                     kickem.setTimestamp(new Date())
                     kickem.setFooter("Hiroko", bot.user.avatarURL())
                     message.channel.send(kickem);
                     message.react('👍');
                 }).catch(err => {
-                    message.channel.send(`Error : ${err.message}`)
+                    message.channel.send(`Looks like something wrong happened. You can try again later!`)
                     message.react('👎');
                     console.log(err);
                 });
