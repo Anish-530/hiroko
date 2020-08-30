@@ -1,4 +1,5 @@
 const { MessageEmbed } = require('discord.js')
+const Discord = require('discord.js');
 const os = require('os')
 module.exports = {
     name: 'stats',
@@ -14,7 +15,7 @@ module.exports = {
         let minutes = Math.floor(totalSeconds / 60);
         let seconds = Math.floor(totalSeconds % 60);
         let ime = `day(s) ----- [${days}] d\nhour(s) ----- [${hours}] h\nminute(s) ----- [${minutes}] m\nsecond(s) ----- [${seconds}] s`;
-        const embed = new MessageEmbed()
+        const embed = new Discord.MessageEmbed()
             .setThumbnail(message.guild.iconURL({ dynamic: true, format: 'png' }))
             .setAuthor(`${bot.user.username}\'s Stats (v6.8.0)`, bot.user.displayAvatarURL())
             .setColor(0x2f3136)
