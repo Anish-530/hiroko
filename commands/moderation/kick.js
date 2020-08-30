@@ -35,7 +35,7 @@ module.exports={
                     message.channel.send(kickem);
                     message.react('👍');
                 }).catch(err => {
-                    message.reply(`Looks like something wrong went, You can try again later!`)
+                    message.reply(`Looks like something wrong went, You can try again later! \`${err.message}\``)
                     message.react('👎');
                     console.log(err);
                 });
