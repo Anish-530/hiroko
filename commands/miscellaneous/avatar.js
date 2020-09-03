@@ -8,7 +8,7 @@ module.exports={
     usage: 'hey avatar [mention someone]',
     run: async(bot, message, args)=>{
         try{
-        const memberr = message.mentions.users.first() || message.author;
+        const memberr = message.mentions.users.first() || message.author || message.guild.members.cache.get(args[0]);
         let em = new MessageEmbed()
         em.setImage(memberr.displayAvatarURL({ dynamic: true, format: 'png', size: 512 }))
         em.setColor(0x2f3136)
