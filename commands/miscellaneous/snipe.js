@@ -7,7 +7,6 @@ module.exports={
     aliases: ['s','catch'],
     usage: 'hey snipe',
     run: async(bot, message, args)=>{
-        if(!message.member.guild.me.hasPermission(['MANAGE_MESSAGES'])) return message.channel.send("I don\'t have the permission to snipe messages");
         const msg = bot.snipes.get(message.channel.id)
         if(!msg) return message.channel.send("I see, There are no messages currently deleted")
         const sni = new MessageEmbed()
