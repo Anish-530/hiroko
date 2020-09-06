@@ -8,11 +8,11 @@ const Tenor = require("tenorjs").client({
 });
 const {MessageEmbed} = require('discord.js');
 module.exports={
-    name: 'stare',
+    name: 'think',
     category: 'interaction',
-    description: 'stare at someone',
-    aliases: ['jii'],
-    usage: 'hey stare <mention someone>',
+    description: '🤔',
+    aliases: ['thonk'],
+    usage: 'hey think',
     run: async(bot, message, args)=>{
         const mentionedddMember111 = message.mentions.users.first()
                 //changed
@@ -20,14 +20,13 @@ module.exports={
 
                     if (message.mentions.members.first().id === bot.user.id) {
                   
-                     return message.channel.send(`*0_0*`)
+                     return message.channel.send(`*Thonks*`)
                   
                     }
                 }
-        if (!mentionedddMember111) return message.channel.send("👀 What are you staring at btw?")
         if (mentionedddMember111.id === message.author.id) return message.channel.send("jiii!!")
-        const slapp = await message.channel.send("\`Staring...\`")
-        Tenor.Search.Random("anime stare", "1").then(Results111 => {
+        const slapp = await message.channel.send("\`Thinking...\`")
+        Tenor.Search.Random("thonk", "1").then(Results111 => {
             Results111.forEach(Post111 => {
                 var mediax111 = Post111.media[0];
                 console.log(mediax111.gif);
@@ -36,7 +35,7 @@ module.exports={
                 let ki11 = new Discord.MessageEmbed()
                 
                 ki11.setColor(0x2f3136)
-                ki11.setDescription(`**${message.guild.members.cache.get(message.author.id).displayName}** stares at **${message.guild.members.cache.get(mentionedddMember111.id).displayName}** 👀`)
+                ki11.setDescription(`**${message.guild.members.cache.get(message.author.id).displayName}** thinks 🤔`)
                 ki11.setImage(gif111.url)
                 ki11.setTimestamp(new Date())
                 ki11.setFooter("Hiroko", bot.user.avatarURL())
