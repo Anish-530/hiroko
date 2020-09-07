@@ -14,33 +14,31 @@ module.exports={
     aliases: ['thonk'],
     usage: 'hey think',
     run: async(bot, message, args)=>{
-        const mentionedddMember111 = message.mentions.users.first()
                 //changed
                 if (message.mentions.members.first() !== undefined) {
 
                     if (message.mentions.members.first().id === bot.user.id) {
                   
-                     return message.channel.send(`*Thonks*`)
+                     return message.channel.send(`*Thinks*`)
                   
                     }
                 }
-        if (mentionedddMember111.id === message.author.id) return message.channel.send("jiii!!")
-        const slapp = await message.channel.send("\`Thinking...\`")
-        Tenor.Search.Random("thonk", "1").then(Results111 => {
-            Results111.forEach(Post111 => {
-                var mediax111 = Post111.media[0];
-                console.log(mediax111.gif);
-                var gif111 = mediax111.gif
-                console.log(gif111)
-                let ki11 = new Discord.MessageEmbed()
-                
-                ki11.setColor(0x2f3136)
-                ki11.setDescription(`**${message.guild.members.cache.get(message.author.id).displayName}** thinks 🤔`)
-                ki11.setImage(gif111.url)
-                ki11.setTimestamp(new Date())
-                ki11.setFooter("Hiroko", bot.user.avatarURL())
-                return slapp.edit("\t", ki11)
+        const wagg = await message.channel.send("\`Thinking...\`")
+        Tenor.Search.Random("thonk", "1").then(Results1r => {
+            Results1r.forEach(Post1q => {
+                var mediax1q = Post1q.media[0];
+                console.log(mediax1q.gif);
+                var gif1q = mediax1q.gif
+                console.log(gif1q)
+                let kik = new Discord.MessageEmbed()
+            
+                kik.setColor(0x2f3136)
+                kik.setDescription(`**${message.guild.members.cache.get(message.author.id).displayName}** thinks 🤔`)
+                kik.setImage(gif1q.url)
+                kik.setTimestamp(new Date())
+                kik.setFooter("Hiroko", bot.user.avatarURL())
+                return wagg.edit("\t", kik)
             });
-        }).catch(console.error); 
-        }
+        }).catch(console.error);
     }
+}
