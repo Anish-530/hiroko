@@ -8,7 +8,11 @@ module.exports={
     usage: 'hey coindecide',
     run: async(bot, message, args)=>{
         const ans = ['heads','tails']
+        try{
         const b = ans[Math.floor(Math.random() * ans.length)]
         message.channel.send(`It\'s a \`${b}\``);
+        }catch(err){
+            return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+          }
     }
 }

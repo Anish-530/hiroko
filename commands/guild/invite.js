@@ -12,6 +12,7 @@ module.exports={
         let max = message.content.toLowerCase().substring(11);
         if(isNaN(max)) return message.channel.send("That\'s not a number, you have provided")
         if(!max) return message.channel.send("Please specify the number of invite uses you want for your invite link.\n**Example** : \`hey invite 23\`\n**Note** : \`You can write 0 for infinite uses *hey invite 0*\`")
+        try{
             let invite = await message.channel.createInvite( 
             {
               maxAge: 0,
@@ -21,5 +22,8 @@ module.exports={
           .catch(console.log);
           
             message.reply(invite ? `Here's your invite: ${invite} ` : "There has been an error during the creation of the invite.");
+          }catch(err){
+            return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+          }
     }
 }

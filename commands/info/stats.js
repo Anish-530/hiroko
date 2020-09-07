@@ -16,10 +16,11 @@ module.exports = {
         let seconds = Math.floor(totalSeconds % 60);
         let ime = `day(s) ----- [${days}] d\nhour(s) ----- [${hours}] h\nminute(s) ----- [${minutes}] m\nsecond(s) ----- [${seconds}] s`;
         const embed = new Discord.MessageEmbed()
-            .setThumbnail(message.guild.iconURL({ dynamic: true, format: 'png' }))
-            .setAuthor(`${bot.user.username}\'s Stats (v6.8.0)`, bot.user.displayAvatarURL())
-            .setColor(0x2f3136)
-            .addFields(
+        try{
+            embed.setThumbnail(message.guild.iconURL({ dynamic: true, format: 'png' }))
+            embed.setAuthor(`${bot.user.username}\'s Stats (v6.8.0)`, bot.user.displayAvatarURL())
+            embed.setColor(0x2f3136)
+            embed.addFields(
                 {
                     name: 'Total Servers 🌐',
                     value: `${bot.guilds.cache.size}`,
@@ -71,8 +72,11 @@ module.exports = {
                     inline: true
                 }
             )
-            .setFooter(`Requested By ${message.guild.members.cache.get(member.id).displayName}`, message.author.displayAvatarURL({ dynamic: true }))
+            embed.setFooter(`Requested By ${message.guild.members.cache.get(member.id).displayName}`, message.author.displayAvatarURL({ dynamic: true }))
 
-        await message.channel.send(embed)
+        return message.channel.send(embed)
+    }catch(err){
+        return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
     }
+}
 }

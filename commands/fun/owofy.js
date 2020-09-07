@@ -8,6 +8,7 @@ module.exports={
     usage: 'hey owo <your text>',
     run: async(bot, message, args)=>{
         let ow = args.join(' OwO ')
+        try{
         if(!ow) {
             return message.channel.send("Give me something to OwO-ify");
         }
@@ -16,5 +17,8 @@ module.exports={
               parse: []
             }
           });
+        }catch(err){
+          return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+        }
     }
 }

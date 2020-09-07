@@ -64,6 +64,7 @@ module.exports={
             "ok yes",
             "ok no",
         ]
+        try{
         if(!args[1]) {
             return message.reply("You need to ask me a question!");
         }
@@ -72,5 +73,8 @@ module.exports={
               parse: []
             }
           });
+        }catch(err){
+            return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+        }
     }
 }

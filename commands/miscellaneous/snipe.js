@@ -7,6 +7,7 @@ module.exports={
     aliases: ['s','catch'],
     usage: 'hey snipe',
     run: async(bot, message, args)=>{
+        try{
         const msg = bot.snipes.get(message.channel.id)
         if(!msg) return message.channel.send("I see, There are no messages currently deleted")
         const sni = new MessageEmbed()
@@ -16,5 +17,8 @@ module.exports={
         sni.setTimestamp(new Date())
         if(msg.image) return message.channel.send("I see, There are no messages currently deleted")
         message.channel.send(sni)
+        }catch(err){
+            return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+          }
     }
 }

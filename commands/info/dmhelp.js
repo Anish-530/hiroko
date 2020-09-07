@@ -84,6 +84,7 @@ module.exports={
     aliases: ['dh'],
     usage: 'hey dmhelp',
     run: async(bot, message, args)=>{
+        try{
         message.react('📧');
         if(!args[0]) {
         const emojis = {
@@ -232,5 +233,8 @@ module.exports={
           }
           await reactionPages(msg, message.author, options, currentPage, currentRetries);
         }
+    }catch(err){
+        return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+      }
     }
 }

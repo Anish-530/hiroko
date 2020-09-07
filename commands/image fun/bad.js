@@ -22,8 +22,7 @@ module.exports={
             const bady = new Discord.MessageAttachment(canvas.toBuffer(), `Bad boi ${bad.username}.jpg`);
             await message.channel.send(bady);  
         }catch(err){
-            console.log(err);
-            return message.channel.send('Oops! Look\'s like something went wrong.\nYou can get more details about the command by typing \`hey help [command name]\`')
-        }
+            return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+          }
     }
 }

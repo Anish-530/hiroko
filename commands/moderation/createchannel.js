@@ -12,6 +12,7 @@ module.exports={
         const vb = message.content.toLowerCase().substring(18);
         let dedle = args.join('-')
         if(!vb) return message.channel.send("Provide me a channel name to create it!\n`Example : hey createchannel waifu warzone`")
+        try{
         message.guild.channels.create(`${vb}`).then(channel => {
             let cha = new Discord.MessageEmbed()
             cha.setTitle("Create Channel :")
@@ -21,5 +22,8 @@ module.exports={
             cha.setFooter("Hiroko", bot.user.displayAvatarURL())
             message.channel.send(cha);
         })
+    }catch(err){
+        return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+      }
     }
 }

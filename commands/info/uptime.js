@@ -8,6 +8,7 @@ module.exports={
     usage: 'hey uptime',
     run: async(bot, message, args)=>{
         const nm = await message.channel.send("\`Calculating....\`")
+        try{
         let totalSeconds = (bot.uptime / 1000);
         let days = Math.floor(totalSeconds / 86400);
         let hours = Math.floor(totalSeconds / 3600);
@@ -20,5 +21,8 @@ module.exports={
         upup.setColor(0x2f3136)
         upup.setDescription(`\`\`\`js\n${uy} ${upime}\`\`\``)
         return nm.edit("\t", upup)
-    }
+    }catch(err){
+        return nm.edit("\t",'Oops! Looks like something went wrong, You can try again Later.')
+      }
+}
 }

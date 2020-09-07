@@ -18,7 +18,7 @@ module.exports={
         em.setFooter(`Oh! Btw Nice pfp! ngl 😏`)
         message.channel.send(em);
     }catch(err){
-        if(err) return message.channel.send('I was unable to find that member :(');
-    }
+        return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+      }
     }
 }

@@ -34,7 +34,7 @@ module.exports={
         emn.setColor(0x2f3136)
         message.channel.send(emn);
         }catch(err){
-            if(err) return message.channel.send(`The Error occuring currently is : ${err.message}`)
+            return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
         }
     }
 }

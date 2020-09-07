@@ -115,6 +115,7 @@ module.exports={
             "101"
         ]
         if (mentioneddMemberrc === message.guild.me) return message.channel.send("A perfect 100% for me tho 😂")
+        try{
         let Responsegc = responsesr[Math.floor(Math.random() * (responsesr.length))];
         em2c.setTitle(message.guild.members.cache.get(memberrc.id).displayName + "\'s rate of epicness 🤩")
         em2c.setDescription("You are **" + Responsegc + "**% Epic 💥")
@@ -142,5 +143,8 @@ module.exports={
             em2c.setFooter("GODLEVEL EPICNESS! ✌")
         }
         message.channel.send(em2c);
+        }catch(err){
+            return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+          }
     }
 }

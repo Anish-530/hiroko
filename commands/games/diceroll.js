@@ -8,6 +8,7 @@ module.exports={
     usage: 'hey diceroll [a number]',
     run: async(bot, message, args)=>{
         const di = ['1','2','3','4','5','6']
+        try{
         const rolled = di[Math.floor(Math.random() * di.length)]
         if(!args[0]){
         let cm = await message.channel.send(`**Rolling the dice 🎲**`)
@@ -25,5 +26,8 @@ module.exports={
                 return message.reply(`Sorry, but \`${args[0]}\` didn\'t match with \`${rolled}\`..wrong number`)
             }
         }
+    }catch(err){
+        return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+      }
     }
 }

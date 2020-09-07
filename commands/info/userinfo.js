@@ -9,6 +9,7 @@ module.exports={
     aliases: ['info'],
     usage: 'hey userinfo [mention someone]',
     run: async(bot, message, args)=>{
+        try{
         const flags = {
             DISCORD_EMPLOYEE: 'Discord Employee',
             DISCORD_PARTNER: 'Discord Partner',
@@ -98,5 +99,8 @@ module.exports={
                 `\u200b`
             ]);
         return message.channel.send(embed);
+        }catch(err){
+            return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+          }
     }
 }

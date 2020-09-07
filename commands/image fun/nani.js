@@ -32,8 +32,8 @@ module.exports={
             ctx.drawImage(girlfriendAvatar, 65, 200, 135, 135);
             const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'nani.jpg');
             message.channel.send(attachment)
-        } catch (err) {
-        return message.reply(`Oh no, an error occurred: \`${err.message}\`. Try again later!`);    
-        }
+        }catch(err){
+            return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+          }
     }
 }

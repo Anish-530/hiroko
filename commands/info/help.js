@@ -84,6 +84,7 @@ module.exports={
     aliases: [],
     usage: 'hey help [a specific command]',
     run: async(bot, message, args)=>{
+        try{
         if(!args[0]) {
         const emojis = {
             firstPage: '⏮',
@@ -257,5 +258,8 @@ module.exports={
 
     return message.channel.send(embed.setColor(0x2f3136).setDescription(info));
 }
-    }
+    }catch(err){
+        return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+      }
+}
 }

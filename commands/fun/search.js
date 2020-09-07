@@ -38,7 +38,7 @@ module.exports={
             });
         })
     }catch(err){
-        if(err) return message.channel.send(`Hey ${message.author}, I was unable to find any gifs of ${arv}, Sorry :()`)
-    }
+        return searchh.edit("\t",'Oops! Looks like something went wrong, You can try again Later.')
+      }
     }
 }

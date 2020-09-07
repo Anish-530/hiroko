@@ -8,6 +8,7 @@ module.exports={
     usage: 'hey table',
     run: async(bot, message, args)=>{
         const pk = await message.channel.send("**Ready?**")
+        try{
         const ch = [ pk.edit("Here we go"),
         pk.edit("meet kameratsu"),
         pk.edit("meet kameratsu"),
@@ -53,6 +54,9 @@ module.exports={
         pk.edit("<(￣︶￣)>"),
         pk.edit("Be like kameratsu")
         ]
+    }catch(err){
+        return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+      }
 
     }
 }

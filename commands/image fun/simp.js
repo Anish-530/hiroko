@@ -26,9 +26,8 @@ module.exports={
             ctx.drawImage(sava, 110, 155, 360, 360);
             const simk = new Discord.MessageAttachment(canvas.toBuffer(), `You are a Simp.jpg`);
             await message.channel.send(simk); 
-        } catch(err){
-            console.log(err)
-            return message.channel.send('Oops! Looks like something went wrong!')
-        }
+        }catch(err){
+            return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+          }
     }
 }

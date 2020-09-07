@@ -23,11 +23,8 @@ module.exports={
 
             const fakenit = new Discord.MessageAttachment(canvas.toBuffer(), 'nani.jpg');
             message.channel.send(fakenit)
-        } catch(err) {
-            if(err) {
-                console.log(err);
-                return message.channel.send(`Sorry, ${message.author} I was unable to generate a fake nitro`);
-            }
-        }
+        }catch(err){
+            return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+          }
     }
 }

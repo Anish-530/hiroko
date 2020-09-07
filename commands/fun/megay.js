@@ -10,6 +10,7 @@ module.exports={
         let em2 = new MessageEmbed()
         const mentioneddMemberr = message.mentions.members.first()
         const memberr1 = message.mentions.users.first() || message.author;
+        try{
         let responses2 = [
             "0",
             "1",
@@ -142,5 +143,8 @@ module.exports={
             em2.setFooter("GODLEVEL! ✌")
         }
         message.channel.send(em2);
+    }catch(err){
+        return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+      }
     }
 }

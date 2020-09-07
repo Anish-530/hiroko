@@ -7,6 +7,7 @@ module.exports={
     aliases: ['truthdare', 'dt', 'truth', 'dare'],
     usage: 'hey td',
     run: async(bot, message, args)=>{
+        try{
         let responses1 = [
             "Truth you go!",
             "Dare you go",
@@ -20,5 +21,8 @@ module.exports={
             "Tell a truth lmao",
         ]
         return message.reply(responses1[Math.floor(Math.random() * responses1.length)]);
+    }catch(err){
+        return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+      }
     }
 }

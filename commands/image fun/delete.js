@@ -34,9 +34,8 @@ module.exports={
                 ctx.drawImage(dava, 55, 62, 115, 115);
                 const dipy = new Discord.MessageAttachment(canvas.toBuffer(), `Delete ${del.username} permanently?.jpg`);
                 await message.channel.send(dipy);    
-        } catch(err){
-            console.log(err);
-            return message.channel.send('Oops! Looks like something went wrong');
-        }
+        }catch(err){
+            return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+          }
     }
 }

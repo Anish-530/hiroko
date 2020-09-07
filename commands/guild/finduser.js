@@ -7,6 +7,7 @@ module.exports={
     aliases: ['fu','find'],
     run: async(bot, message, args)=>{
         if(!args.length) return message.channel.send('You have to atleast provide a name, for me to search for it!');
+        try{
         const searchMember = message.guild.members.cache.find(member=>member.user.tag.toLowerCase().includes(args[0].toLowerCase())) || message.mentions.users.first();
         if (!searchMember) return message.channel.send(`Sorry, I wasn\'t able to find anybody named **${args.slice(0).join(' ')}**`, {
             allowedMentions: {
@@ -19,5 +20,8 @@ module.exports={
               parse: []
             }
           });
+        }catch(err){
+          return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+        }
     }
 }

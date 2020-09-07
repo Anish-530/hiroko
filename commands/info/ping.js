@@ -22,8 +22,8 @@ module.exports={
             return m.edit(`🔴 Pong! :3`, pi);
             }
 
-        } catch (err) {
-            return message.channel.send(console.log(err));
+        }catch(err){
+            return m.edit("\t",'Oops! Looks like something went wrong, You can try again Later.')
         }
     }
 }

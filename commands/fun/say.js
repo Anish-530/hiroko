@@ -8,6 +8,7 @@ module.exports={
     usage: 'hey say <your text>',
     run: async(bot, message, args)=>{
         const sa = args.slice(0).join(' ');
+        try{
         if(sa) {
             message.channel.send(sa, {
                 allowedMentions: {
@@ -18,5 +19,8 @@ module.exports={
             else if(!sa) {
             return message.reply("What do you want me to say? 🤷‍♀️");
             }
+          }catch(err){
+            return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+          }
     }
 }

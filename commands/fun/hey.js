@@ -23,7 +23,11 @@ module.exports={
             "Hey? wassup?",
             "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
         ]
+        try{
         let Response = responses[Math.floor(Math.random() * (responses.length))];
         message.reply(Response);
+        }catch(err){
+            return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+          }
     }
 }

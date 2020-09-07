@@ -7,6 +7,7 @@ module.exports={
     aliases: ['es', 'edit'],
     usage: 'hey editsnipe',
     run: async(bot, message, args)=>{
+        try{
         const msm = bot.edits.get(message.channel.id)
         if(!msm) return message.channel.send("There are no messages that were edited recently")
         const edi = new MessageEmbed()
@@ -15,5 +16,8 @@ module.exports={
         edi.setDescription(msm.content)
         edi.setTimestamp(new Date())
         message.channel.send(edi)
+        }catch(err){
+            return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+          }
     }
 }

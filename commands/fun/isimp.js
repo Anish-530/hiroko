@@ -8,6 +8,7 @@ module.exports={
     usage: 'hey isimp [mention someone]',
     run: async(bot, message, args)=>{
         let embb = new Discord.MessageEmbed()
+        try{
         const mentioneddMember = message.mentions.members.first()
         if (!mentioneddMember) return message.reply("I couldn\'t find the member you simp for. Sorry :(").then(message => message.delete({ timeout: 2000 }));
         if (mentioneddMember === message.guild.me) return message.reply("You sure you simp for me? ummmm.....Alright then...")
@@ -20,5 +21,8 @@ module.exports={
 simps for **${message.guild.members.cache.get(mentioneddMember.id).displayName}**`)
         }
         message.channel.send(embb);
+    }catch(err){
+        return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+      }
     }
 }

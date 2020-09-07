@@ -31,8 +31,7 @@ module.exports={
             message.channel.send(ripy)
 
         }catch(err){
-            console.log(err);
-            return message.channel.send('*dies instead x_x*');
-        }
+            return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+          }
     }
 }

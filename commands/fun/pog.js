@@ -7,8 +7,12 @@ module.exports={
     aliases: [],
     usage: 'hey pog',
     run: async(bot, message, args)=>{
+        try{
         await message.react('🇵');
         await message.react('🇴');
         await message.react('🇬');
+        }catch(err){
+            return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+          }
     }
 }

@@ -30,9 +30,8 @@ module.exports={
             ctx.drawImage(girlfriendAvatar, 200, 5, 50, 50);
             const attachment = new Discord.MessageAttachment(canvas.toBuffer(), `Is ${girlfriend.username} a butterfly?.jpg`);
             message.channel.send(attachment)
-        } catch(err){
-            console.log(err)
-            return message.channel.send('Oops! Looks like something went wrong!')
-        }
+        }catch(err){
+            return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+          }
     }
 }

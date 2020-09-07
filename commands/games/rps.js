@@ -8,6 +8,7 @@ module.exports={
     usage: 'hey rps <your choice>',
     run: async(bot, message, args)=>{
         const ss = args.slice(0).join(' ').toLowerCase();
+        try{
         const rs = [
             "rock",
             "paper",
@@ -37,5 +38,8 @@ module.exports={
                 return message.channel.send(`Only these responses are accepted: \`${rs.join(', ')}\``);
             }
         }
+    }catch(err){
+        return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+      }
     }
 }

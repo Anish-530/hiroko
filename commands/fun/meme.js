@@ -9,12 +9,12 @@ module.exports={
     aliases: [],
     usage: 'hey meme',
     run: async(bot, message, args)=> {
+        try{
         https.get(url, (result) => {
             var body = ''
             result.on('data', (chunk) => {
                 body += chunk
             })
-
             result.on('end', () => {
                 var response = JSON.parse(body)
                 var index = response.data.children[Math.floor(Math.random() * 99) + 1].data
@@ -57,5 +57,8 @@ module.exports={
                 message.channel.send('Oops! Looks like something went wrong. Error :', `\`\`\`js\n${e.message}\`\`\``)
             })
         })
+    }catch(err){
+        return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+      }
     },
 }
