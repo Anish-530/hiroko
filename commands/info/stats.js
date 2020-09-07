@@ -52,7 +52,7 @@ module.exports = {
                 },
                 {
                     name: 'Developer 💻',
-                    value: `ANISH`,
+                    value: `Awish`,
                     inline: true
                 },
                 {
