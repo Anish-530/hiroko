@@ -1,5 +1,4 @@
 const { MessageEmbed } = require('discord.js')
-const Discord = require('discord.js');
 const os = require('os')
 module.exports = {
     name: 'stats',
@@ -15,7 +14,7 @@ module.exports = {
         let minutes = Math.floor(totalSeconds / 60);
         let seconds = Math.floor(totalSeconds % 60);
         let ime = `day(s) ----- [${days}] d\nhour(s) ----- [${hours}] h\nminute(s) ----- [${minutes}] m\nsecond(s) ----- [${seconds}] s`;
-        const embed = new Discord.MessageEmbed()
+        const embed = new MessageEmbed()
         try{
             embed.setThumbnail(message.guild.iconURL({ dynamic: true, format: 'png' }))
             embed.setAuthor(`${bot.user.username}\'s Stats (v6.8.0)`, bot.user.displayAvatarURL())
@@ -72,11 +71,11 @@ module.exports = {
                     inline: true
                 }
             )
-            embed.setFooter(`Requested By ${message.guild.members.cache.get(member.id).displayName}`, message.author.displayAvatarURL({ dynamic: true }))
+            embed.setFooter(`Requested By ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
 
-        return message.channel.send(embed)
-    }catch(err){
-        return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+        await message.channel.send(embed)
+        }catch(err){
+            return message.channel.send(`Oops! Looks like something went wrong, You can try again Later.`)
+        }
     }
-}
 }
