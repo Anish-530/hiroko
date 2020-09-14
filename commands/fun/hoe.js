@@ -17,6 +17,6 @@ module.exports={
         "push it more in senpai~"
         ]
         let Responsegc = Responsegc[Math.floor(Math.random() * (rep.length))];
-        message.reply(`${rep}`);
+        message.reply(`${Responsegc}`);
     }
 }
