@@ -7,6 +7,16 @@ module.exports={
     aliases: [],
     usage: 'hey hoe',
     run: async(bot, message, args)=>{
-        message.reply('whachu doin baby girl');
+        const rep = [
+        "whachu doin baby girl",
+        "what you want bitch",
+        "fuck you",
+        "hey daddy uwu~",
+        "wanna got out?",
+        "let's get a room",
+        "push it more in senpai~"
+        ]
+        let Responsegc = Responsegc[Math.floor(Math.random() * (rep.length))];
+        message.reply(`${rep}`);
     }
 }
