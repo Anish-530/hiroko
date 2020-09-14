@@ -16,7 +16,7 @@ module.exports={
         "let's get a room",
         "push it more in senpai~"
         ]
-        let Responsegc = Responsegc[Math.floor(Math.random() * (rep.length))];
+        let Responsegc = rep[Math.floor(Math.random() * (rep.length))];
         message.reply(`${Responsegc}`);
     }
 }
