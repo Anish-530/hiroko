@@ -48,6 +48,12 @@ return true;
 if (reaction.emoji.name === options.emojis.delete) {
     // delete the message (also stops listening)
 await message.delete();
+const helpd = new Discord.MessageEmbed()
+helpd.setThumbnail('https://i.imgur.com/JmFQNiz.gif')
+helpd.setColor(0x2f3136)
+helpd.setTitle('> Help command deleted!')
+helpd.setDescription('> This message gets deleted after 10 seconds')
+await message.channel.send(helpd).then(message => message.delete({ timeout: 10000 }));
 return true;   
 }
 
@@ -200,6 +206,10 @@ module.exports={
                         {
                             name: 'This is the last page',
                             value: `\`\`\`More commands are being added everyday\`\`\``
+                        },
+                        {
+                            name: 'Vote For me!',
+                            value: `[Here](https://top.gg/bot/722729985512833076/vote)`,
                         }
                     ]
                 }
