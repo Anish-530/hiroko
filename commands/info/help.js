@@ -53,6 +53,7 @@ helpd.setThumbnail('https://i.imgur.com/JmFQNiz.gif')
 helpd.setColor(0x2f3136)
 helpd.setTitle('> Help command deleted!')
 helpd.setDescription('> This message gets deleted after 10 seconds')
+await message.channel.send(helpd).then(message => message.delete({ timeout: 10000 }));
 return true;   
 }
 
