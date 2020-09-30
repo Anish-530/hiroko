@@ -6,24 +6,24 @@ module.exports={
     category: 'info',
     description: 'Display the info of an user',
     timeout: 10000,
-    aliases: ['info'],
+    aliases: ['info','ui'],
     usage: 'hey userinfo [mention someone]',
     run: async(bot, message, args)=>{
-        try{
+        //fix the message.author.presence
         const flags = {
-            DISCORD_EMPLOYEE: 'Discord Employee',
-            DISCORD_PARTNER: 'Discord Partner',
-            BUGHUNTER_LEVEL_1: 'Bug Hunter (Level 1)',
-            BUGHUNTER_LEVEL_2: 'Bug Hunter (Level 2)',
-            HYPESQUAD_EVENTS: 'HypeSquad Events',
-            HOUSE_BRAVERY: 'House of Bravery',
-            HOUSE_BRILLIANCE: 'House of Brilliance',
-            HOUSE_BALANCE: 'House of Balance',
-            EARLY_SUPPORTER: 'Early Supporter',
+            DISCORD_EMPLOYEE: '<:DiscordStaff:760775337788702781> Discord Employee',
+            DISCORD_PARTNER: '<:discordpartner:760781001907109918> Discord Partner',
+            BUGHUNTER_LEVEL_1: '<:BugHunter:760775337847029800> Bug Hunter (Level 1)',
+            BUGHUNTER_LEVEL_2: '<:BugHunterLvl2:760775337478717450> Bug Hunter (Level 2)',
+            HYPESQUAD_EVENTS: '<:hypesquadevents:760775336752840734> HypeSquad Events',
+            HOUSE_BRAVERY: '<:HouseofBravery:760781001462513684> House of Bravery',
+            HOUSE_BRILLIANCE: '<:HouseofBrilliance:760781001449537537> House of Brilliance',
+            HOUSE_BALANCE: '<:HouseofBalance:760784351469240320> House of Balance',
+            EARLY_SUPPORTER: '<:EarlySupporter:760775336925069323> Early Supporter',
             TEAM_USER: 'Team User',
             SYSTEM: 'System',
-            VERIFIED_BOT: 'Verified Bot',
-            VERIFIED_DEVELOPER: 'Verified Bot Developer'
+            VERIFIED_BOT: '<:verifiedBot:760775117063716874> Verified Bot',
+            VERIFIED_DEVELOPER: '<:developer:760775172599840828> Verified Bot Developer',
         };
         const member = message.mentions.members.last() || message.member;
         const roles = member.roles.cache
@@ -39,13 +39,12 @@ module.exports={
             embed.addField('User', [
                 `**❯ Username:** ${member.user.username}`,
                 `**❯ Tag:** #${member.user.discriminator}`,
-                `**❯ Nickname:** ${message.guild.members.cache.get(member.id).displayName}`,
                 `**❯ ID:** ${member.id}`,
                 `**❯ Flags:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
                 `**❯ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
                 `**❯ Account Creation Detail:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`,
                 `**❯ Status:** ⚫ ${statuser}`,
-                `**❯ Game:** ${member.user.presence.game || 'Not playing a game right now'}`,
+                `**❯ Game:** ${member.presence.activities || 'Not playing a game right now'}`,
                 `\u200b`
             ])
         }
@@ -53,13 +52,12 @@ module.exports={
             embed.addField('User', [
                 `**❯ Username:** ${member.user.username}`,
                 `**❯ Tag:** #${member.user.discriminator}`,
-                `**❯ Nickname:** ${message.guild.members.cache.get(member.id).displayName}`,
                 `**❯ ID:** ${member.id}`,
                 `**❯ Flags:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
                 `**❯ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
                 `**❯ Account Creation Detail:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`,
                 `**❯ Status:** 🟢 ${statuser}`,
-                `**❯ Game:** ${member.user.presence.game || 'Not playing a game right now'}`,
+                `**❯ Game:** ${member.presence.activities || 'Not playing a game right now'}`,
                 `\u200b`
             ])
         }
@@ -67,13 +65,12 @@ module.exports={
             embed.addField('User', [
                 `**❯ Username:** ${member.user.username}`,
                 `**❯ Tag:** #${member.user.discriminator}`,
-                `**❯ Nickname:** ${message.guild.members.cache.get(member.id).displayName}`,
                 `**❯ ID:** ${member.id}`,
                 `**❯ Flags:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
                 `**❯ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
                 `**❯ Account Creation Detail:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`,
                 `**❯ Status:** 🔴 ${statuser}`,
-                `**❯ Game:** ${member.user.presence.game || 'Not playing a game right now'}`,
+                `**❯ Game:** ${member.presence.activities || 'Not playing a game right now'}`,
                 `\u200b`
             ])
         }
@@ -81,13 +78,12 @@ module.exports={
             embed.addField('User', [
                 `**❯ Username:** ${member.user.username}`,
                 `**❯ Tag:** #${member.user.discriminator}`,
-                `**❯ Nickname:** ${message.guild.members.cache.get(member.id).displayName}`,
                 `**❯ ID:** ${member.id}`,
                 `**❯ Flags:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
                 `**❯ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
                 `**❯ Account Creation Detail:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`,
                 `**❯ Status:** 🟡 ${statuser}`,
-                `**❯ Game:** ${member.user.presence.game || 'Not playing a game right now'}`,
+                `**❯ Game:** ${member.presence.activities || 'Not playing a game right now'}`,
                 `\u200b`
             ])
         }
@@ -99,8 +95,5 @@ module.exports={
                 `\u200b`
             ]);
         return message.channel.send(embed);
-        }catch(err){
-            return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
-          }
     }
 }
