@@ -25,7 +25,7 @@ module.exports={
             VERIFIED_BOT: '<:verifiedBot:760775117063716874> Verified Bot',
             VERIFIED_DEVELOPER: '<:developer:760775172599840828> Verified Bot Developer',
         };
-        const member = message.mentions.members.last() || message.member;
+        const member = message.mentions.members.last() || message.member || message.guild.members.cache.get(args[0]);
         const roles = member.roles.cache
             .sort((a, b) => b.position - a.position)
             .map(role => role.toString())
