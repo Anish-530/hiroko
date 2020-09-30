@@ -69,6 +69,11 @@ module.exports = {
                     name: 'Bot-Uptime 🕚',
                     value: `\`\`\`js\n${ime}\`\`\``,
                     inline: true
+                },
+                {
+                    name: 'Vote For me 🔼',
+                    value: `[Here](https://top.gg/bot/722729985512833076/vote)`,
+                    inline: true
                 }
             )
             embed.setFooter(`Requested By ${message.author.tag}`, message.author.displayAvatarURL({ dynamic: true }))
