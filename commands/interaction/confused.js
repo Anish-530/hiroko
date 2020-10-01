@@ -11,7 +11,7 @@ module.exports={
     name: 'confused',
     category: 'interaction',
     description: 'Are you confused?',
-    aliases: ['what'],
+    aliases: [],
     usage: 'hey confused',
     run: async(bot, message, args)=>{
         const mentionedddMember11 = message.mentions.users.first() || message.author;

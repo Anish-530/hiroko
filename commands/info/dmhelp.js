@@ -133,7 +133,7 @@ module.exports={
                     fields: [
                         {
                             name: '✨ | GUILD',
-                            value: `\`hey emojis\`\n\`hey finduser\`\n\`hey invite\`\n\`hey nick\`\n`
+                            value: `\`hey announcement [New Update]\`\n\`hey emojis\`\n\`hey finduser\`\n\`hey invite\`\n\`hey nick\`\n`
                         }
                     ]
                 }
@@ -169,7 +169,7 @@ module.exports={
                     fields: [
                         {
                             name: '🤝 | INTERACTION',
-                            value: `\`hey angry\`\n\`hey baka\`\n\`hey blush\`\n\`hey carry\`\n\`hey confused\`\n\`hey cry\`\n\`hey dab\`\n\`hey drink\`\n\`hey explode\`\n\`hey greet\`\n\`hey handhold\`\n\`hey highfive\`\n\`hey hug\`\n\`hey kiss\`\n\`hey laugh\`\n\`hey lick\`\n\`hey nom\`\n\`hey pat\`\n\`hey poke\`\n\`hey pout\`\n\`hey punch\`\n\`hey scream\`\n\`hey shoot\`\n\`hey slap\`\n\`hey sniff\`\n\`hey stare\`\n\`hey stare\`\n\`hey tickle\`\n\`hey wag\`\n\`hey wave\`\n`
+                            value: `\`hey angry\`\`hey annoyed [New Update]\`\n\n\`hey baka\`\n\`hey blush\`\n\`hey carry\`\n\`hey confused\`\n\`hey cry\`\n\`hey dab\`\n\`hey drink\`\n\`hey explode\`\n\`hey greet\`\n\`hey handhold\`\n\`hey highfive\`\n\`hey hug\`\n\`hey kiss\`\n\`hey laugh\`\n\`hey lick\`\n\`hey nom\`\n\`hey pat\`\n\`hey poke\`\n\`hey pout\`\n\`hey punch\`\n\`hey scream\`\n\`hey shoot\`\n\`hey slap\`\n\`hey sniff\`\n\`hey stare\`\n\`hey stare\`\n\`hey tickle\`\n\`hey wag\`\n\`hey wave\`\n`
                         }
                     ]
                 }
@@ -206,6 +206,10 @@ module.exports={
                         {
                             name: 'This is the last page',
                             value: `\`\`\`More commands are being added everyday\`\`\``
+                        },
+                        {
+                            name: 'Updates(10/2/2020)',
+                            value: `\`\`\`Added an Announcement command (Use 'hey announcement' to trigger the command).\nAdded an annoyed interaction command (Use 'hey annoyed' to trigger the command)\`\`\``
                         },
                         {
                             name: 'Vote For me!',
