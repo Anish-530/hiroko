@@ -95,7 +95,7 @@ module.exports={
                 .setDescription(
                     `Tell me a color name or give me a hex code of a color, for your announcement to be, write \`skip\` if you don't want a color, or \`cancel\` if you wish to exit the setup.`,
                 )
-                .addField(`Example:`, `\`red\` or \`#cb42f5\``, true)
+                .addField(`Example:`, `\`red\` or \`#cb42f5\` or \`cb42f5\`. Note :- **The Length of hex color code are only 6 characters, anything more than 6 characters will not be accepted.**`, true)
                 .setFooter(`Step 2 of 8`)
                 .setTimestamp();
             questionMessage = await message.channel.send(colorEmbed);
@@ -213,7 +213,7 @@ module.exports={
             const deEmbed = new MessageEmbed()
             .setColor(0x2f3136)
             .setTitle(`Step 5: Description Text Format`)
-            .setDescription(`Tell me the **text format** of your description, you want, for your announcement, write \`skip\` if you want your description, normal without formatted text, or \`cancel\` if you wish to exit setup.\n\nExample of every text format :-\n1. **Bold**\n2. *Italic*\n3. \`Block Text\`\n4. \`\`\`Code Block\`\`\`\n5. __Underline__\n6. ***Italic Bold***`)
+            .setDescription(`Tell me the **text format** of your description, you want either choose a name or choose a number, from the options below, for your announcement, write \`skip\` if you want your description, normal without formatted text, or \`cancel\` if you wish to exit setup.\n\nExample of every text format :-\n1. **Bold**\n2. *Italic*\n3. \`Block Text\`\n4. \`\`\`Code Block\`\`\`\n5. __Underline__\n6. ***Italic Bold***`)
             .setFooter(`Step 5 of 8`)
             .setTimestamp();
         questionMessage = await message.channel.send(deEmbed);
@@ -233,22 +233,22 @@ module.exports={
             await message.channel.send(tmbed);
             return message.delete();
         }
-        if (collected.first().content.toLowerCase() === 'bold'){
+        if (collected.first().content.toLowerCase() === 'bold' || collected.first().content.toLowerCase() === '1'){
             format = `**${description}**`;
         }
-        else if (collected.first().content.toLowerCase() === 'italic'){
+        else if (collected.first().content.toLowerCase() === 'italic' || collected.first().content.toLowerCase() === '2'){
             format = `*${description}*`;
         }
-        else if (collected.first().content.toLowerCase() === 'block text'){
+        else if (collected.first().content.toLowerCase() === 'block text' || collected.first().content.toLowerCase() === '3'){
             format = `\`${description}\``;
         }
-        else if (collected.first().content.toLowerCase() === 'code block'){
+        else if (collected.first().content.toLowerCase() === 'code block'|| collected.first().content.toLowerCase() === '4'){
             format = `\`\`\`${description}\`\`\``;
         }
-        else if (collected.first().content.toLowerCase() === 'underline'){
+        else if (collected.first().content.toLowerCase() === 'underline'|| collected.first().content.toLowerCase() === '5'){
             format = `__${description}__`;
         }
-        else if (collected.first().content.toLowerCase() === 'italic bold'){
+        else if (collected.first().content.toLowerCase() === 'italic bold'|| collected.first().content.toLowerCase() === '6'){
             format = `***${description}***`;
         }
         else if (collected.first().content.toLowerCase() === 'skip')
@@ -394,12 +394,20 @@ module.exports={
                 .setTimestamp();
             await message.channel.send(fEmbed);
             const embed = new MessageEmbed()
-                .setColor(`${color.toUpperCase()}`)
-                .setTitle(title)
-                .setDescription(format)
-                .setThumbnail((url = thumbnail))
-                .setFooter(footer)
-                .setImage((url = image));
+                if(color.charAt(1) === "0" || color.charAt(1) === "#"){
+                    embed.setColor(`${color}`)
+                }
+                else if(color.charAt(1) !== "0" || color.charAt(1) !== "#"){
+                    embed.setColor(0x2f3136)
+                }
+                else{
+                    embed.setColor(`${color.toUpperCase()}`)
+                }
+                embed.setTitle(title)
+                embed.setDescription(format)
+                embed.setThumbnail((url = thumbnail))
+                embed.setFooter(footer)
+                embed.setImage((url = image));
             await bot.channels.cache.get(chan).send(embed);
             message.delete();
         } catch (e) {
