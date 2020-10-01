@@ -213,10 +213,7 @@ module.exports={
             const deEmbed = new MessageEmbed()
             .setColor(0x2f3136)
             .setTitle(`Step 5: Description Text Format`)
-            .setDescription(
-                `Tell me the **text format** of your description, you want, for your announcement, write \`skip\` if you want your description, normal without formatted text, or \`cancel\` if you wish to exit setup.`,
-            )
-            .setDescription(`Example of every text format :-\n1. **Bold**\n2. *Italic*\n3. \`Block Text\`\n4. \`\`\`Code Block\`\`\`\n5. __Underline__\n6. ***Italic Bold***`)
+            .setDescription(`Tell me the **text format** of your description, you want, for your announcement, write \`skip\` if you want your description, normal without formatted text, or \`cancel\` if you wish to exit setup.\n\nExample of every text format :-\n1. **Bold**\n2. *Italic*\n3. \`Block Text\`\n4. \`\`\`Code Block\`\`\`\n5. __Underline__\n6. ***Italic Bold***`)
             .setFooter(`Step 5 of 8`)
             .setTimestamp();
         questionMessage = await message.channel.send(deEmbed);
