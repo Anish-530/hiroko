@@ -6,10 +6,9 @@ module.exports={
     category: 'info',
     description: 'Display the info of an user',
     timeout: 10000,
-    aliases: ['info','ui'],
+    aliases: ['ui'],
     usage: 'hey userinfo [mention someone]',
     run: async(bot, message, args)=>{
-        //fix the message.author.presence
         const flags = {
             DISCORD_EMPLOYEE: '<:DiscordStaff:760775337788702781> Discord Employee',
             DISCORD_PARTNER: '<:discordpartner:760781001907109918> Discord Partner',
@@ -25,7 +24,7 @@ module.exports={
             VERIFIED_BOT: '<:verifiedBot:760775117063716874> Verified Bot',
             VERIFIED_DEVELOPER: '<:developer:760775172599840828> Verified Bot Developer',
         };
-        const member = message.mentions.members.last() || message.member || message.guild.members.cache.get(args[0]);
+        const member = message.mentions.members.last() || message.member;
         const roles = member.roles.cache
             .sort((a, b) => b.position - a.position)
             .map(role => role.toString())
@@ -34,7 +33,18 @@ module.exports={
         const statuser = member.user.presence.status;
         const embed = new MessageEmbed()
             embed.setThumbnail(member.user.displayAvatarURL({ dynamic: true, size: 512 }))
-            embed.setColor(member.displayHexColor || 0x2f3136)
+            if(statuser === "offline"){
+                embed.setColor(0x2f3136)
+            }
+            else if(statuser === "online"){
+                embed.setColor('#18ed18')
+            }
+            else if(statuser === "dnd"){
+                embed.setColor('#ed1f11')
+            }
+            else if(statuser === "idle"){
+                embed.setColor('#e8e810')
+            }
             if(statuser === "offline") {
             embed.addField('User', [
                 `**❯ Username:** ${member.user.username}`,
@@ -43,7 +53,7 @@ module.exports={
                 `**❯ Flags:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
                 `**❯ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
                 `**❯ Account Creation Detail:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`,
-                `**❯ Status:** ⚫ ${statuser}`,
+                `**❯ Status:** <a:Weboff:733764404587397150> ${statuser}`,
                 `**❯ Game:** ${member.presence.activities || 'Not playing a game right now'}`,
                 `\u200b`
             ])
@@ -56,7 +66,7 @@ module.exports={
                 `**❯ Flags:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
                 `**❯ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
                 `**❯ Account Creation Detail:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`,
-                `**❯ Status:** 🟢 ${statuser}`,
+                `**❯ Status:** <a:Issuefixed:733764280536662026> ${statuser}`,
                 `**❯ Game:** ${member.presence.activities || 'Not playing a game right now'}`,
                 `\u200b`
             ])
@@ -69,7 +79,7 @@ module.exports={
                 `**❯ Flags:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
                 `**❯ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
                 `**❯ Account Creation Detail:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`,
-                `**❯ Status:** 🔴 ${statuser}`,
+                `**❯ Status:** <a:Issue:733764473000689745> ${statuser}`,
                 `**❯ Game:** ${member.presence.activities || 'Not playing a game right now'}`,
                 `\u200b`
             ])
@@ -82,7 +92,7 @@ module.exports={
                 `**❯ Flags:** ${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
                 `**❯ Avatar:** [Link to ${member.user.username}'s avatar](${member.user.displayAvatarURL({ dynamic: true })})`,
                 `**❯ Account Creation Detail:** ${moment(member.user.createdTimestamp).format('LT')} ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`,
-                `**❯ Status:** 🟡 ${statuser}`,
+                `**❯ Status:** <a:Fixing:748633521454841987> ${statuser}`,
                 `**❯ Game:** ${member.presence.activities || 'Not playing a game right now'}`,
                 `\u200b`
             ])
