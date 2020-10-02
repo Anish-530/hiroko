@@ -25,7 +25,9 @@ module.exports={
             VERIFIED_BOT: '<:verifiedBot:760775117063716874> Verified Bot',
             VERIFIED_DEVELOPER: '<:developer:760775172599840828> Verified Bot Developer',
         };
-        const member = message.mentions.members.last() || message.member;
+        const mentionedddMember11 = message.mentions.users.first() || message.guild.members.cache.get(args[0]) || message.author;
+        const member = message.guild.member(mentionedddMember11);
+        var guildID = bot.guilds.cache.get(message.guild.id).id;
         const roles = member.roles.cache
             .sort((a, b) => b.position - a.position)
             .map(role => role.toString())
@@ -34,7 +36,7 @@ module.exports={
         trimString = (roles, max) => ((roles.length > max) ? `${roles.slice(0, max - 3)}...` : roles);
         const statuser = member.user.presence.status;
         const embed = new MessageEmbed()
-            embed.setThumbnail(member.user.displayAvatarURL({ dynamic: true, size: 512 }))
+            embed.setThumbnail(bot.guilds.resolve(guildID).members.resolve(mentionedddMember11).user.avatarURL({ dynamic: true, format: 'png', size: 512 }))
             if(statuser === "offline"){
                 embed.setColor(0x2f3136)
             }

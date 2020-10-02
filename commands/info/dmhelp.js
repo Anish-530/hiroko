@@ -109,7 +109,7 @@ module.exports={
                     fields: [
                         {
                             name: '😂 | FUN',
-                            value: `\`hey 8ball\`\n\`hey bold\`\n\`hey clap\`\n\`hey epic\`\n\`hey flip\`\n\`hey hey\`\n\`hey isimp\`\n\`hey megay\`\n\`hey meme\`\n\`hey mesimp\`\n\`hey owofy\`\n\`hey pog\`\n\`hey sayd(say delete)\`\n\`hey say\`\n\`hey search\`\n\`hey spoil\`\n\`hey table\`\n\`hey uwufy\`\n`
+                            value: `\`hey 8ball\`\n\`hey bold\`\n\`hey clap\`\n\`hey epic\`\n\`hey flip\`\n\`hey hey\`\n\`hey impersonate [New Update]\`\n\`hey isimp\`\n\`hey megay\`\n\`hey meme\`\n\`hey mesimp\`\n\`hey owofy\`\n\`hey pog\`\n\`hey sayd(say delete)\`\n\`hey say\`\n\`hey search\`\n\`hey spoil\`\n\`hey table\`\n\`hey uwufy\`\n`
                         }
                     ]
                 }
@@ -157,7 +157,7 @@ module.exports={
                     fields: [
                         {
                             name: '🤖 | INFO',
-                            value: `\`hey botinvite\`\n\`hey dmhelp\`\n\`hey help\`\n\`hey info\`\n\`hey ping\`\n\`hey stats\`\n\`hey supportserver\`\n\`hey time\`\n\`hey uptime\`\n\`hey urban\`\n\`hey userinfo\`\n`
+                            value: `\`hey botinvite\`\n\`hey dmhelp\`\n\`hey help\`\n\`hey info\`\n\`hey ping\`\n\`hey stats\`\n\`hey supportserver\`\n\`hey time\`\n\`hey uptime\`\n\`hey urban\`\n\`hey userinfo [Command Updated]\`\n`
                         }
                     ]
                 }
@@ -181,7 +181,7 @@ module.exports={
                     fields: [
                         {
                             name: '🎲 | MISCELLANEOUS',
-                            value: `\`hey avatar\`\n\`hey editsnipe\`\n\`hey snipe\``
+                            value: `\`hey avatar [Command Updated]\`\n\`hey editsnipe\`\n\`hey snipe\``
                         }
                     ]
                 }
@@ -208,8 +208,8 @@ module.exports={
                             value: `\`\`\`More commands are being added everyday\`\`\``
                         },
                         {
-                            name: 'Updates(10/2/2020)',
-                            value: `\`\`\`Added an Announcement command (Use 'hey announcement' to trigger the command).\nAdded an annoyed interaction command (Use 'hey annoyed' to trigger the command)\`\`\``
+                            name: 'Updates(10/3/2020)',
+                            value: `\`\`\`Added an Announcement command (Use 'hey announcement' to trigger the command).\n\nAdded an annoyed interaction command (Use 'hey annoyed' to trigger the command)\n\nAdded an impersonate fun command (Use 'hey impersonate' to trigger the command)\n\nUpdated userinfo and avatar command (These commands now support IDs, with mentions too.)\`\`\``
                         },
                         {
                             name: 'Vote For me!',
