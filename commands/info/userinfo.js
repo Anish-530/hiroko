@@ -9,6 +9,7 @@ module.exports={
     aliases: ['ui'],
     usage: 'hey userinfo [mention someone]',
     run: async(bot, message, args)=>{
+        try{
         const flags = {
             DISCORD_EMPLOYEE: '<:DiscordStaff:760775337788702781> Discord Employee',
             DISCORD_PARTNER: '<:discordpartner:760781001907109918> Discord Partner',
@@ -30,6 +31,7 @@ module.exports={
             .map(role => role.toString())
             .slice(0, -1);
         const userFlags = member.user.flags.toArray();
+        trimString = (roles, max) => ((roles.length > max) ? `${roles.slice(0, max - 3)}...` : roles);
         const statuser = member.user.presence.status;
         const embed = new MessageEmbed()
             embed.setThumbnail(member.user.displayAvatarURL({ dynamic: true, size: 512 }))
@@ -101,9 +103,13 @@ module.exports={
                 `**❯ Highest Role:** ${member.roles.highest.id === message.guild.id ? 'None' : member.roles.highest.name}`,
                 `**❯ Server Join Date:** ${moment(member.joinedAt).format('LL LTS')}`,
                 `**❯ Hoist Role:** ${member.roles.hoist ? member.roles.hoist.name : 'None'}`,
-                `**❯ Roles [${roles.length}]:** ${roles.length < 10 ? roles.join(', ') : roles.length > 10 ? this.client.utils.trimArray(roles) : 'None'}`,
+                `**❯ Roles [${roles.length}]:** ${roles.length < 6 ? roles.join(', ') : roles.length > 6 ? trimString(roles, 9) : trimString(roles, 9)}`,
                 `\u200b`
             ]);
         return message.channel.send(embed);
+        }catch(err){
+            console.log(err);
+            message.channel.send(`The Error is : ${err.message}`)
+        }
     }
 }
