@@ -59,7 +59,7 @@ module.exports={
                 .setColor(0x2f3136)
                 .setTitle(`Step 1: Channel`)
                 .setDescription(
-                    `Please mention the channel you would like me, to announce in to be sent in, or write \`cancel\` if you wish to exit setup.`,
+                    `Please mention a channel, for the announcement to be sent in!, or write \`cancel\` if you wish to exit setup.`,
                 )
                 .setFooter(`Step 1 of 8`)
                 .setTimestamp();
@@ -93,7 +93,7 @@ module.exports={
                 .setColor(0x2f3136)
                 .setTitle(`Step 2: Color`)
                 .setDescription(
-                    `Tell me a color name or give me a hex code of a color, for your announcement to be, write \`skip\` if you don't want a color, or \`cancel\` if you wish to exit the setup.`,
+                    `Tell me a color\'s, name or give me a hex code of a color, for the embed of your announcement to be, write \`skip\` if you don't want a color, or \`cancel\` if you wish to exit the setup.`,
                 )
                 .addField(`Example:`, `\`red\` or \`#cb42f5\` or \`cb42f5\`. Note :- **The Length of hex color code are only 6 characters, anything more than 6 characters will not be accepted.**`, true)
                 .setFooter(`Step 2 of 8`)
@@ -213,7 +213,7 @@ module.exports={
             const deEmbed = new MessageEmbed()
             .setColor(0x2f3136)
             .setTitle(`Step 5: Description Text Format`)
-            .setDescription(`Tell me the **text format** of your description, you want either choose a name or choose a number, from the options below, for your announcement, write \`skip\` if you want your description, normal without formatted text, or \`cancel\` if you wish to exit setup.\n\nExample of every text format :-\n1. **Bold**\n2. *Italic*\n3. \`Block Text\`\n4. \`\`\`Code Block\`\`\`\n5. __Underline__\n6. ***Italic Bold***`)
+            .setDescription(`Tell me the **text formatting** of your description, you want either choose a name or choose a number, from the options below, for your announcement, write \`skip\` if you want your description, normal without formatted text, or \`cancel\` if you wish to exit setup.\n\nExample of every text format :-\n1. **Bold**\n2. *Italic*\n3. \`Block Text\`\n4. \`\`\`Code Block\`\`\`\n5. __Underline__\n6. ***Italic Bold***`)
             .setFooter(`Step 5 of 8`)
             .setTimestamp();
         questionMessage = await message.channel.send(deEmbed);
@@ -411,7 +411,6 @@ module.exports={
             await bot.channels.cache.get(chan).send(embed);
             message.delete();
         } catch (e) {
-            console.log(e);
             return message.channel.send(`Oops, Looks like there\'s an error here : \`${e.message}\``);
         }
     }
