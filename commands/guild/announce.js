@@ -9,7 +9,7 @@ module.exports={
     run: async(bot, message, args)=>{
         try {
             if (!message.member.hasPermission('MANAGE_MESSAGES'))
-                return message.channel.send("You don\'t have the permission to use this command.");
+                return message.channel.send("You don\'t have the permission to use this command.\nYou need \`MANAGE_MESSAGES\` permission, to use this command.");
             let questionMessage;
             let collected;
             let messageFilter = (m) => m.author.id === message.author.id;
