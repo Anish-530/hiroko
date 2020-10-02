@@ -8,8 +8,8 @@ module.exports={
     usage: 'hey announce',
     run: async(bot, message, args)=>{
         try {
-            if (!message.member.hasPermission('MANAGE_MESSAGES'))
-                return message.channel.send("You don\'t have the permission to use this command.\nYou need \`MANAGE_MESSAGES\` permission, to use this command.");
+            if (!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send("You don\'t have the permission to use this command.\nYou need \`MANAGE_MESSAGES\` permission, to use this command.");
+            if(!message.member.guild.me.hasPermission(['MANAGE_MESSAGES'])) return message.channel.send("I don\'t have the permission to \`MANAGE MESSAGES\`.\nPlease provide me the following permission to use this command")
             let questionMessage;
             let collected;
             let messageFilter = (m) => m.author.id === message.author.id;
