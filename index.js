@@ -32,7 +32,7 @@ const PREFIX = 'hey ';
 
 
 bot.on('ready', () => {
-    bot.user.setActivity(`hey help`, {type: "PLAYING"});
+    bot.user.setActivity(`hey help`, {type: "LISTENING"});
 })
 
 bot.on("error", async(err) => {
