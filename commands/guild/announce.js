@@ -25,7 +25,7 @@ module.exports={
                 return new Promise(async (resolve, reject) => {
                     collected = await message.channel.awaitMessages(
                         messageFilter,
-                        { max: 1, time: 60000 },
+                        { max: 1, time: 600000 },
                     );
                     if (collected.size === 0) reject(`Timeout`);
                     else if (collected.first().mentions.channels.size === 0) {
