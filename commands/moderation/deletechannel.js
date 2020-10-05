@@ -7,8 +7,8 @@ module.exports={
     aliases: ['dc', 'delchannel'],
     usage: 'hey deletechannel <channel name>',
     run: async(bot, message, args)=>{
-        if(!message.member.hasPermission(['MANAGE_CHANNELS'])) return message.channel.send("Sorry, your roles are too low to execute this command!")
-        if(!message.member.guild.me.hasPermission(['MANAGE_CHANNELS'])) return message.channel.send("I don\'t have the permission to \`MANAGE CHANNELS\`.\nPlease provide me the following permission to use this command")
+        if(!message.member.hasPermission(['MANAGE_CHANNELS'])) return message.channel.send("You don\'t have the permission to use this command.\nYou need \`MANAGE_CHANNELS\` permission, to use this command.")
+        if(!message.member.guild.me.hasPermission(['MANAGE_CHANNELS'])) return message.channel.send("I don\'t have the permission to \`MANAGE_CHANNELS\`.\nPlease provide me the following permission to use this command")
         const fetchedChannel = message.guild.channels.cache.find(r => r.name === args.join('-'));
         try{
         if(!fetchedChannel) return message.channel.send("Provide me a valid channel name to delete it!\n`Example : hey delchannel waifu warzone`")
