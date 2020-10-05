@@ -7,8 +7,8 @@ module.exports={
     aliases: ['del'],
     usage: 'hey clear <number of messages you want to clear>',
     run: async(bot, message, args)=>{
-        if(!message.member.hasPermission(['MANAGE_MESSAGES'])) return message.channel.send("Sorry, your roles are too low to execute this command!");
-        if(!message.member.guild.me.hasPermission(['MANAGE_MESSAGES'])) return message.channel.send("I don\'t have the permission to \`MANAGE MESSAGES\`.\nPlease provide me the following permission to use this command")
+        if(!message.member.hasPermission(['MANAGE_MESSAGES'])) return message.channel.send("You don\'t have the permission to use this command.\nYou need \`MANAGE_MESSAGES\` permission, to use this command.");
+        if(!message.member.guild.me.hasPermission(['MANAGE_MESSAGES'])) return message.channel.send("I don\'t have the permission to \`MANAGE_MESSAGES\`.\nPlease provide me the following permission to use this command")
         const amount = parseInt(args[0]);
         try{
         if (isNaN(amount)) {
