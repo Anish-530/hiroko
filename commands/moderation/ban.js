@@ -7,7 +7,7 @@ module.exports={
     aliases: [],
     usage: 'hey ban <mention the user you want to ban>',
     run: async(bot, message, args)=>{
-        if (!message.member.hasPermission(['BAN_MEMBERS'])) return message.reply('You don\'t have the permission to use this command.\nYou need \`BAN_MEMBERS\` permission, to use this command.');
+        if (!message.member.hasPermission(['BAN_MEMBERS'])) return message.channel.send('You don\'t have the permission to use this command.\nYou need \`BAN_MEMBERS\` permission, to use this command.');
         if(!message.member.guild.me.hasPermission(['BAN_MEMBERS'])) return message.channel.send("I don\'t have the permission to \`BAN_MEMBERS\`.\nPlease provide me the following permission to use this command")  
         const userb = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
         if (!userb) return message.reply('You need to mention the user, whom you want to **ban**.\nEx: \`hey ban @the-user-you-want-to-ban\`').then(message => message.delete({ timeout: 6000 }));
