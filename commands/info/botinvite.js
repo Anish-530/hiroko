@@ -12,7 +12,7 @@ module.exports={
         inv.setThumbnail(bot.user.avatarURL())
         inv.setColor(0x2f3136)
         inv.addField('Invite me', 
-        `**❯ :** [My invite link](https://discordapp.com/oauth2/authorize?client_id=722729985512833076&scope=bot&permissions=1584917759)`)
+        `**❯ :** [My invite link](https://discord.com/oauth2/authorize?client_id=722729985512833076&scope=bot&permissions=1543896183)`)
         return message.channel.send(inv);
         }catch(err){
             return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
