@@ -7,6 +7,7 @@ module.exports={
     aliases: ['im'],
     usage: 'hey impersonate <Mention someone or Use their ID> <message>',
     run: async(bot, message, args)=>{
+        if(message.author.id !== "671355502399193128") return message.channel.send("This command is being re-developed, for some bugs.\nIt will be re-released soon.")
         const mentionedddMember11 = message.mentions.users.first() || message.guild.members.cache.get(args[0]);
         const member = message.guild.member(mentionedddMember11);
         var guildID = bot.guilds.cache.get(message.guild.id).id;
