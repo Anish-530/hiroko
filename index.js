@@ -9,9 +9,23 @@ const bot = new Client({
     disableEveryone: true
 })
 
-const BFDAPI = require("bfdapi.js");
-const bfd = new BFDAPI("722729985512833076","0e505b4cb5f2ff2af644b2ab5c876863f2857ba2f6906c86fa89d65edc32acc8e0385f0bf09a3c943db2a276bb534e2dcaa95bc293ee20abfdcbfe98ac9b8834");
-bfd.postServerCount(bot.guilds.cache.size).then((res) => console.log(res));
+const unirest = require('unirest');
+
+function postStats(id, auth, serverCount){
+  return new Promise( async function(resolve, reject) { 
+         await unirest
+        .get(`https://botsfordiscord.com/api/bot/${722729985512833076}`)
+        .headers({
+            Authorization: `0e505b4cb5f2ff2af644b2ab5c876863f2857ba2f6906c86fa89d65edc32acc8e0385f0bf09a3c943db2a276bb534e2dcaa95bc293ee20abfdcbfe98ac9b8834`
+        }).body(JSON.stringify({ server_count: serverCount })
+        .end(function (statusCode) {
+            resolve(statusCode);
+            console.log("owo");
+        })
+  )});
+}
+
+module.export = postStats();
 
 bot.commands = new Collection();
 bot.aliases = new Collection();

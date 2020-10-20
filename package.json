@@ -13,7 +13,6 @@
     "an": "0.0.8",
     "an-random": "^0.1.1",
     "ascii-table": "0.0.9",
-    "bfdapi.js": "^2.0.1",
     "canvas": "^2.6.1",
     "cheerio": "^1.0.0-rc.3",
     "common-tags": "^1.8.0",
@@ -35,6 +34,7 @@
     "star-labs": "^1.1.2",
     "table": "^5.4.6",
     "tenorjs": "^1.0.7",
+    "unirest": "^0.6.0",
     "urban-dictionary": "^2.2.1"
   }
 }
