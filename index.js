@@ -9,26 +9,6 @@ const bot = new Client({
     disableEveryone: true
 })
 
-const unirest = require('unirest');
-
-const unirest = require('unirest');
-
-function postStats(id, auth, serverCount){
-  return new Promise( async function(resolve, reject) { 
-         await unirest // hai senpai~ awish daddy, where are you calling this?
-        .get(`https://botsfordiscord.com/api/bot/${id}`) // where is your onready thingy uwu
-        .headers({
-            Authorization: `${token}`
-        }).body(JSON.stringify({ server_count: serverCount })
-        .end(function (statusCode) {
-            resolve(statusCode);
-            console.log("owo");
-        })
-  )});
-}
-
-
-
 bot.commands = new Collection();
 bot.aliases = new Collection();
 bot.categories = fs.readdirSync("./commands/");
@@ -46,15 +26,11 @@ const filter = m => m.content.includes('discord');
 
 
 
-
 const PREFIX = 'hey ';
 
-//awish, you're super cute uwu. Yes u are uwu <3 
-bot.on('ready', () => { //here line 54 wait senpai your bot is down?
-    bot.user.setActivity(`hey help`, {type: "LISTENING"});
 
-    postStats(bot.user.id, "0e505b4cb5f2ff2af644b2ab5c876863f2857ba2f6906c86fa89d65edc32acc8e0385f0bf09a3c943db2a276bb534e2dcaa95bc293ee20abfdcbfe98ac9b8834", bot.guilds.cache.size);
-    
+bot.on('ready', () => { 
+    bot.user.setActivity(`hey help`, {type: "LISTENING"});
 })
 
 bot.on("error", async(err) => {
