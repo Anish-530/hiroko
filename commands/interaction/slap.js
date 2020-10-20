@@ -25,7 +25,7 @@ module.exports={
                     }
                 }
         if (!mentionedddMember111) { return message.channel.send("Don't slap anyone please 😢"); }
-        else if (mentionedddMember111.id === message.author) { return message.channel.send("Don't slap yourself please 😢") }
+        if (mentionedddMember111.id === message.author.id) { return message.channel.send("Don't slap yourself please 😢") }
         const slapp = await message.channel.send("\`Slapping\`")
         Tenor.Search.Random("anime slap", "1").then(Results111 => {
             Results111.forEach(Post111 => {
