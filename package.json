@@ -13,6 +13,7 @@
     "an": "0.0.8",
     "an-random": "^0.1.1",
     "ascii-table": "0.0.9",
+    "bfd-js-api": "^1.5.1",
     "canvas": "^2.6.1",
     "cheerio": "^1.0.0-rc.3",
     "common-tags": "^1.8.0",
