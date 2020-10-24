@@ -13,7 +13,6 @@
     "an": "0.0.8",
     "an-random": "^0.1.1",
     "ascii-table": "0.0.9",
-    "bfd-js-api": "^1.5.1",
     "canvas": "^2.6.1",
     "cheerio": "^1.0.0-rc.3",
     "common-tags": "^1.8.0",
@@ -33,7 +32,6 @@
     "request": "^2.88.2",
     "snekfetch": "^4.0.4",
     "star-labs": "^1.1.2",
-    "superagent": "^6.1.0",
     "table": "^5.4.6",
     "tenorjs": "^1.0.7",
     "urban-dictionary": "^2.2.1"

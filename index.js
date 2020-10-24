@@ -17,10 +17,6 @@ const Timeout = new Set();
     require(`./handlers/${handler}`)(bot);
 });
 
-const bfdapi = require('bfd-js-api');
-const bfd = new bfdapi(bot, '0e505b4cb5f2ff2af644b2ab5c876863f2857ba2f6906c86fa89d65edc32acc8e0385f0bf09a3c943db2a276bb534e2dcaa95bc293ee20abfdcbfe98ac9b8834', autopost /*(Enable AutoPost Stats? true or false)*/, intervalValue /*(in Seconds & Default to 30 Mins)*/);
-
-
 const request = require('request');
 const {MessageCollector} = require('discord.js-collector');
 const path = require('path');
@@ -33,13 +29,7 @@ const filter = m => m.content.includes('discord');
 const PREFIX = 'hey ';
 
 
-bot.on('ready', () => {
-    bfd.on('posted', (guildCount) => {
-        console.log(`Successfully Posted ${guildCount} Guilds`);
-    });
-    bfd.on('error', (err) => {
-        console.log(`I have Errored!\n${err}`);
-    });
+bot.on('ready', () => { 
     bot.user.setActivity(`hey help`, {type: "LISTENING"});
 })
 
