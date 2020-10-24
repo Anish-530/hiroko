@@ -33,6 +33,7 @@
     "request": "^2.88.2",
     "snekfetch": "^4.0.4",
     "star-labs": "^1.1.2",
+    "superagent": "^6.1.0",
     "table": "^5.4.6",
     "tenorjs": "^1.0.7",
     "urban-dictionary": "^2.2.1"
