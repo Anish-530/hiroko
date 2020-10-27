@@ -32,9 +32,17 @@ module.exports={
         emn.setThumbnail(message.guild.iconURL({ dynamic: true, format: 'png', size: 512 }))
         emn.setDescription(`**Animated [${Animated}]**:\n${EmojisAnimated}\n\n**Standard [${EmojiCount}]**:\n${Emojis}`)
         emn.setColor(0x2f3136)
+        trimString = (EmojisAnimated, max) => ((EmojisAnimated.length > max) ? `${EmojisAnimated.slice(0, max - 3)}...` : EmojisAnimated);
+        trimstring = (Emojis, max) => ((Emojis.length > max) ? `${Emojis.slice(0, max - 3)}...` : Emojis);
+        if(emn.length >= 2048) {
+            emn.setDescription(`
+            **Animated [${Animated}]**:\n${EmojisAnimated.length < 6 ? EmojisAnimated.join(', ') : EmojisAnimated.length > 6 ? trimString(EmojisAnimated, 2047) : trimString(EmojisAnimated, 2047)}\n
+            **Standard [${EmojiCount}]**:\n${Emojis.length < 6 ? Emojis.join(', ') : Emojis.length > 6 ? trimstring(Emojis, 2047) : trimstring(Emojis, 2047)}`)
+        }
         message.channel.send(emn);
+        console.log(emn.length)
         }catch(err){
-            return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
+            return message.channel.send(`The Error occuring currently is : ${err.message}`)
         }
     }
 }
