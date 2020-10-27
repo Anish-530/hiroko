@@ -6,7 +6,8 @@ const express = require('express');
 
 const fs = require('fs');
 const bot = new Client({
-    disableEveryone: true
+    disableEveryone: true,
+    ws: { intents: ["GUILDS", "GUILD_MESSAGES"] }
 })
 
 bot.commands = new Collection();
