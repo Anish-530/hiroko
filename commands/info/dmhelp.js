@@ -109,7 +109,7 @@ module.exports={
                     fields: [
                         {
                             name: '😂 | FUN',
-                            value: `\`hey 8ball\`\n\`hey bold\`\n\`hey clap\`\n\`hey epic\`\n\`hey flip\`\n\`hey hey\`\n\`hey impersonate [New Update]\`\n\`hey isimp\`\n\`hey megay\`\n\`hey meme\`\n\`hey mesimp\`\n\`hey owofy\`\n\`hey pog\`\n\`hey sayd(say delete)\`\n\`hey say\`\n\`hey search\`\n\`hey spoil\`\n\`hey table\`\n\`hey uwufy\`\n`
+                            value: `\`hey 8ball\`\n\`hey bold\`\n\`hey clap\`\n\`hey epic\`\n\`hey flip\`\n\`hey hey\`\n\`hey impersonate [New Update]\`\n\`hey isimp\`\n\`hey megay\`\n\`hey meme\`\n\`hey mesimp\`\n\`hey owofy\`\n\`hey pog\`\n\`hey sayd(say delete)\`\n\`hey say\`\n\`hey search\`\n\`hey spoil\`\n\`hey table\`\n\`hey uwufy\`\n\n\nNotice : We are experiencing some issues, with our bot. This is all because, of Discord's new intents update. We have contacted Discord about this, they will be replying us, back soon. Meanwhile, if you find more bugs, or need any help. Join our [Support Server](https://discord.gg/9VS3HU5)`
                         }
                     ]
                 }
