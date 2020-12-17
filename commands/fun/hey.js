@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+/*const Discord = require('discord.js');
 const {MessageEmbed} = require('discord.js');
 module.exports={
     name: 'hey',
@@ -30,4 +30,4 @@ module.exports={
             return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
           }
     }
-}
+}*/
