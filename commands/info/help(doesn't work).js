@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+/*const Discord = require('discord.js');
 const reactionPages = async (message, author, options, page, retries) => {
     const restartLoop = async () => { await reactionPages(message, author, options, page, retries); }
     const filter = (reaction, user) => {
@@ -276,4 +276,4 @@ module.exports={
         return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
       }
 }
-}
+}*/

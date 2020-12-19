@@ -1,13 +1,13 @@
 const Discord = require('discord.js');
 const {MessageEmbed} = require('discord.js');
 module.exports={
-    name: 'dmhelp',
+    name: 'help',
     category: 'info',
-    description: 'get a list of all the commands',
+    description: 'get a list of all the commands or get details of a specific command',
     aliases: [],
-    usage: 'hey dmhelp',
+    usage: 'hey help [a specific command]',
     run: async(bot, message, args)=>{
-        try {
+        if(!args[0]) {
         let help = new Discord.MessageEmbed()
         .setTitle('For more information about a command, or how to use it. Use \`hey help [command name]\`.')
         .setAuthor('We are aware that some of the commands may not work, or do possibly crash. However this will be fixed real soon. Thank you.')
@@ -48,9 +48,33 @@ module.exports={
         .setDescription(`You can vote for me [here](https://top.gg/bot/722729985512833076/vote) | [Support Server](https://discord.gg/9VS3HU5)`)
         .setColor('#2f3136')
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
-        await message.author.send(help)
-        }catch(err) {
-            return message.channel.send('Looks like an error occured. Please run this command again later.')
+        await message.channel.send(help)
+        }else {
+            return getCMD(bot, message, args[0]);
         }
+
+
+    function getCMD(bot, message, input) {
+    const embed = new Discord.MessageEmbed()
+
+    const cmd = bot.commands.get(input.toLowerCase()) || bot.commands.get(bot.aliases.get(input.toLowerCase()));
+    
+    let info = `No information found for command **${input.toLowerCase()}**`;
+
+    if (!cmd) {
+        return message.channel.send(embed.setColor("RED").setDescription(info).setFooter('This means that the command you entered was either not found\nor there was mistakes while writing the command\'s name, you can recheck your spelling')).then(message => message.delete({ timeout: 10000 }));
+    }
+    if (cmd.category) info += `**Category**: ${cmd.category}`;
+    if (cmd.name) info = `**Command name**: ${cmd.name}`;
+    if (cmd.aliases) info += `\n**Aliases**: ${cmd.aliases.map(a => `\`${a}\``).join(", ")}`;
+    if(cmd.timeout) info += `\n**Cooldown**: ${cmd.timeout}s`
+    if (cmd.description) info += `\n**Description**: ${cmd.description}`;
+    if (cmd.usage) {
+        info += `\n**Usage**: ${cmd.usage}`;
+        embed.setFooter(`Syntax: <> = required, [] = optional, Note : If no aliases are provided, then that command has no aliases, i.e. no shortcut.`);
+    }
+
+    return message.channel.send(embed.setColor(0x2f3136).setDescription(info));
+}
     }
 }
