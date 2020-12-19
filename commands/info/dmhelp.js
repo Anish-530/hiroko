@@ -49,6 +49,7 @@ module.exports={
         .setColor('#2f3136')
         .setFooter(`Requested by ${message.author.tag}`, message.author.displayAvatarURL())
         await message.author.send(help)
+        await message.react('📨')
         }catch(err) {
             return message.channel.send('Looks like an error occured. Please run this command again later.')
         }
