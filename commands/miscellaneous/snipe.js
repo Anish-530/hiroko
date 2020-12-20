@@ -15,7 +15,7 @@ module.exports={
         sni.setColor(0x2f3136)
         sni.setDescription(msg.content)
         sni.setTimestamp(new Date())
-        if(msg.image) return message.channel.send("I see, There are no messages currently deleted")
+        if(msg.image) sni.setImage(msg.image)
         message.channel.send(sni)
         }catch(err){
             return message.channel.send('Oops! Looks like something went wrong, You can try again Later.')
