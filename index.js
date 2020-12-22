@@ -78,6 +78,7 @@ if(command){
 })
 bot.snipes = new Map();
 bot.on('messageDelete', function(message, channel){
+    if(message.author.bot) return;
     bot.snipes.set(message.channel.id, {
         content:message.content,
         author:message.author,
@@ -86,6 +87,7 @@ bot.on('messageDelete', function(message, channel){
 })
 bot.edits = new Map();
 bot.on('messageUpdate', function(message,channel){
+    if(message.author.bot) return;
     bot.edits.set(message.channel.id, {
         content:message.content,
         author:message.author
