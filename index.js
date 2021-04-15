@@ -78,7 +78,7 @@ if(command){
     bot.channels.cache.get('831613440480641064').send(
         em = new Discord.MessageEmbed()
         .setTitle(`Command used!`)
-        .setDescription(`**Name:** \`\`\`${command.name}\`\`\`\n**User:** \`\`\`${message.author.tag} - (${message.author.id})\`\`\`\n**Guild:** \`\`\`${message.guild.name} - (${message.guild.id})\`\`\``)
+        .setDescription(`**Name:** \`\`\`${command.name}\`\`\`\n**User:** \`\`\`${message.author.tag} - (${message.author.id})\`\`\`\n**Guild:** \`\`\`${message.guild.name} - (${message.guild.id})\`\`\`\n**Channel: **\`\`\`${message.channel.name} - (${message.channel.id})\`\`\``)
         .setTimestamp(new Date())
         .setColor('#2f3136')
         .setFooter(bot.user.username, bot.user.avatarURL())
