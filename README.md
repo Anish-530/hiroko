@@ -74,5 +74,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 <div align="center">
-  <sub>Built with ❤️ for the Discord Community.</sub>
+  <i>Developed with 💗 by Awish.</i>
 </div>
